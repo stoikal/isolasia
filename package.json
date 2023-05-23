@@ -1,0 +1,16 @@
+{
+  "name": "aesara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./tailwind.css -o ./style.css --postcss --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU General Public License v2 or later",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

@@ -1,0 +1,204 @@
+/*
+Theme Name: Isolasia
+Version: 0.1.0
+Author: KI-Freiwillige
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Raleway, system-ui, sans-serif;
+  }
+}
+
+/* PRIMARY MENU */
+
+.isolasia_primary-menu {
+  @apply flex text-sm;
+  
+  & a {
+    @apply mx-2 transition-colors
+  }
+
+  & ul, li {
+    @apply flex
+  }
+}
+
+.isolasia_primary-menu-sidebar {
+  & li li {
+    @apply pl-4;
+  }
+
+  & ul {
+    @apply mb-4;
+  }
+}
+
+/* POST CONTENT */
+
+.isolasia_post-content {
+  & p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  ol,
+  ul,
+  blockquote {
+    @apply mb-6;
+  }
+
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  & h1 {
+    @apply text-4xl;
+  }
+
+  & h2 {
+    @apply text-3xl;
+  }
+
+  & h3 {
+    @apply text-2xl;
+  }
+
+  & h4 {
+    @apply text-xl;
+  }
+
+  & h5 {
+    @apply text-lg;
+  }
+
+  & h6 {
+    @apply text-base;
+  }
+
+  & hr {
+    @apply mb-6;
+  }
+
+  & a {
+    @apply underline;
+  }
+
+  & ol:not(.is-layout-flow) {
+    @apply list-decimal pl-6;
+  }
+
+  & ul:not(.is-layout-flow) {
+    @apply list-disc pl-6;
+  }
+
+  & pre {
+    @apply bg-gray-200 p-6;
+  }
+}
+
+/* FRONT PAGE SIDEBAR */
+.isolasia_sidebar-1 {
+  & h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  & hr {
+    @apply border-0 border-b border-gray-200 mb-5;
+  }
+
+  & select {
+    @apply p-3 cursor-pointer;
+
+    & > option {
+      @apply cursor-pointer;
+    }
+  }
+
+  & > section {
+    @apply mb-14;
+  }
+
+  & a {
+    @apply italic;
+  }
+}
+
+/*  COMMENT */
+.isolasia_comment-list {
+  @apply mb-4;
+
+  & li {
+    @apply relative pl-20;
+  }
+
+  & img.avatar {
+    @apply rounded-full absolute left-0;
+  }
+
+  & span.says {
+    @apply hidden;
+  }
+
+  & .comment-author {
+    @apply flex;
+
+    & cite {
+      @apply font-bold;
+    }
+  }
+
+  & .comment-meta {
+    @apply text-sm text-gray-600 mb-3;
+  }
+
+  & p {
+    @apply mb-3;
+  }
+
+  & .reply {
+    @apply text-sm mb-6 text-gray-600 hover:text-blue-500;
+  }
+}
+
+.isolasia_comment-pagination  {
+  @apply mb-20 text-sm text-gray-600;
+
+  & a {
+    @apply hover:text-blue-500;
+  }
+}
+
+.isolasia_comment-form {
+  & label {
+    @apply text-gray-600;
+  }
+  
+  & textarea {
+    @apply border w-full rounded px-2 py-1;
+  }
+
+  & input:not([type='checkbox']):not([type='submit']) {
+    @apply border w-full rounded px-2 py-1;
+  }
+
+  & p {
+    @apply mb-3;
+  }
+
+  & input[type='submit'] {
+    @apply px-2 py-1 bg-stone-950 text-white cursor-pointer;
+  }
+}

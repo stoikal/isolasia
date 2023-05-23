@@ -1,0 +1,86 @@
+<?php
+include __DIR__ . '/../../inc/options.php';
+
+$margin_x_arr = array('mx-0', 'mx-1', 'mx-2', 'mx-3', 'mx-4');
+$title_margin_x = $margin_x_arr[$rp_gutter];
+
+// Retrieve 5 most recent posts
+$popular_posts = get_posts(
+  array(
+    'numberposts' => $pp_max_items,
+    'post_type' => 'post', // Post type
+    'orderby' => 'comment_count', // Order by comment count
+    'order' => 'DESC', // Sort in descending order
+  )
+);
+
+if ( count($popular_posts) > 0 ):
+?>
+
+<section
+  class="
+    overflow-hidden p-4
+    <?= $pp_show_border ? 'border' : '' ?>
+  "
+>
+  <div
+    class="
+      mb-4 border-b border-gray-200
+      <?= $title_margin_x ?>
+    "
+  >
+    <span class="font-display">
+      TERPOPULER
+    </span>
+  </div>
+  <?php
+  foreach ($popular_posts as $post):
+    $post_id = $post->ID;
+    $post_title = $post->post_title;
+    $post_excerpt = get_the_excerpt();
+    $post_link = get_permalink($post_id);
+    $thumbnail_url = get_the_post_thumbnail_url($post_id);
+    $post_categories = get_the_category($post_id);
+    $post_author = get_the_author();
+  ?>
+  <div class="flex p-2 mb-3">
+
+    <div class="w-1/3">
+      <a href="<?= esc_url($post_link)?>">
+        <img
+          src=<?= esc_url($thumbnail_url) ?>
+          class="object-cover w-full aspect-[4/3]"
+        >
+      </a>
+    </div>
+    <div class="w-2/3 pr-2 pl-4 text-left">
+      <h2 class="font-serif">
+        <a
+          href="<?= esc_url($post_link)?>"
+          class="hover:text-emerald-900"
+        >
+          <?= esc_html($post_title) ?>
+        </a>
+      </h2>
+
+      <?php if ( $pp_show_excerpts) :?>
+      <p>
+        <?= esc_html($post_excerpt) ?>
+      </p>
+      <?php endif; ?>
+
+      <p class="mt-1 text-sm">
+        <a
+          href=<?= esc_url("/author/" . $post_author) ?>
+        >
+          <?= esc_html( $post_author )?>
+        </a>
+      </p>
+    </div>
+  </div>
+  <?php endforeach;?>
+</section>
+
+<?php
+endif;
+wp_reset_postdata();
