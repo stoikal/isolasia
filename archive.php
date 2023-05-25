@@ -6,26 +6,38 @@ get_header();
 
 <div class="max-w-screen-lg mx-auto flex flex-wrap py-8 mb-20">
   <div class="w-full md:w-2/3">
-    <main class="p-6">  
+    <main class="p-6 flex flex-wrap">  
       <?php
-        if ( have_posts() ) :
+      if ( have_posts() ) :
+        // Load posts loop.
+        while ( have_posts() ) :
+          the_post();
 
-          // Load posts loop.
-          while ( have_posts() ) :
-            the_post();
-      
+          $author_name = get_the_author();
+          $post_permalink = get_permalink();
       ?>
-        <article>
-          <h1 class="text-4xl font-serif mb-8">
-            <?= the_title(); ?>
-          </h1>
-          <div class="isolasia_post-content">
-            <?= the_content(); ?>
-          </div>
-        </article>
-        <?php endwhile; ?>
+          <article class="w-full sm:w-1/2 p-4 mb-3">
+            <div class="mb-1">
+              <a href="<?= esc_url( $post_permalink ); ?>" class="aspect-[4/3] flex inline-block">
+                <?php the_post_thumbnail('medium', ['class' => 'object-cover'])?>
+              </a>
+            </div>
+            <h1 class="text-xl font-display mb-1">
+              <a
+                href="<?= esc_url( $post_permalink ); ?>"
+                class="hover:underline"
+              >
+                <?= the_title(); ?>
+              </a>
+            </h1>
+            <p class="text-sm">
+              <span>
+                <?= $author_name; ?>
+              </span>
+            </p>
+          </article>
+          <?php endwhile; ?>
       <?php endif; ?>
-      </article>
     </main>
   </div>
 

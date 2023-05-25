@@ -70,11 +70,40 @@ require 'inc/customize_register/sidebar_section.php';
 require 'inc/customize_register/footer_panel.php';
 #endregion CUSTOMIZER SETTINGS
 
-function mytheme_customize_register( WP_Customize_Manager $wp_customize ) {
-  $wp_customize->selective_refresh->add_partial( 'blogname', array(
-      'selector' => '.site-title a',
-      'render_callback' => function() {
-          bloginfo( 'name' );
-      },
-  ) );
+
+function custom_post_type() {
+  $labels = array(
+      'name'               => 'Custom Posts',
+      'singular_name'      => 'Custom Post',
+      'menu_name'          => 'Custom Posts',
+      'add_new'            => 'Add New',
+      'add_new_item'       => 'Add New Custom Post',
+      'edit'               => 'Edit',
+      'edit_item'          => 'Edit Custom Post',
+      'new_item'           => 'New Custom Post',
+      'view'               => 'View',
+      'view_item'          => 'View Custom Post',
+      'search_items'       => 'Search Custom Posts',
+      'not_found'          => 'No custom posts found',
+      'not_found_in_trash' => 'No custom posts found in trash',
+      'parent'             => 'Parent Custom Post'
+  );
+
+  $args = array(
+      'labels'              => $labels,
+      'public'              => true,
+      'has_archive'         => true,
+      'publicly_queryable'  => true,
+      'query_var'           => true,
+      'rewrite'             => array( 'slug' => 'custom-posts' ),
+      'capability_type'     => 'post',
+      'hierarchical'        => false,
+      'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'menu_position'       => 5,
+      'menu_icon'           => 'dashicons-admin-post',
+      'show_in_rest'        => true // Enable Gutenberg editor support
+  );
+
+  register_post_type( 'custom_post_type', $args );
 }
+add_action( 'init', 'custom_post_type' );

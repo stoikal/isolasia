@@ -50,32 +50,35 @@ if ( count($popular_posts) > 0 ):
         <img
           src=<?= esc_url($thumbnail_url) ?>
           class="object-cover w-full aspect-[4/3]"
+          loading="lazy"
         >
       </a>
     </div>
     <div class="w-2/3 pr-2 pl-4 text-left">
-      <h2 class="font-serif">
+      <h2 class="font-serif mb-1">
         <a
           href="<?= esc_url($post_link)?>"
-          class="hover:text-emerald-900"
+          class="hover:underline"
         >
           <?= esc_html($post_title) ?>
         </a>
       </h2>
 
+
       <?php if ( $pp_show_excerpts) :?>
-      <p>
+      <p class="mb-1 text-sm">
         <?= esc_html($post_excerpt) ?>
       </p>
       <?php endif; ?>
 
-      <p class="mt-1 text-sm">
+      <p class="text-sm mb-1 italic">
         <a
           href=<?= esc_url("/author/" . $post_author) ?>
         >
           <?= esc_html( $post_author )?>
         </a>
       </p>
+
     </div>
   </div>
   <?php endforeach;?>
