@@ -4,7 +4,7 @@
  */
 
 ?>
-<?php if ( (bool) get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) : ?>
+<?php if ( post_type_supports( get_post_type(), 'author' ) ) : ?>
 	<div class="flex border p-6">
     <div class="flex-shrink-0">
 			<div class="rounded-full overflow-hidden">
@@ -15,23 +15,19 @@
 			<h2 class="mb-3 font-bold">
         <?php
 				printf(
-					'<a class="author-link" href="%1$s" rel="author">%2$s</a>',
+					'<a class="hover:underline" href="%1$s" rel="author">%2$s</a>',
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					esc_html(get_the_author()),
 				);
         ?>
 				
 			</h2>
-			<p> <?php the_author_meta( 'description' ); ?></p><!-- .author-description -->
+			<p class="mb-4"> <?php the_author_meta( 'description' ); ?></p><!-- .author-description -->
 			<?php
 			printf(
-				'<a class="author-link" href="%1$s" rel="author">%2$s</a>',
+				'<a class="text-sm hover:underline" href="%1$s" rel="author">%2$s</a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				sprintf(
-					/* translators: %s: Author name. */
-					esc_html__( 'View all of %s\'s posts.', 'isolasia' ),
-					get_the_author()
-				)
+				esc_html__( 'lihat semua tulisan', 'isolasia' ),
 			);
 			?>
 		</div><!-- .author-bio-content -->
