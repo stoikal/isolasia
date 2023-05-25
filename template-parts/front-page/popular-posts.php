@@ -41,7 +41,9 @@ if ( count($popular_posts) > 0 ):
     $post_link = get_permalink($post_id);
     $thumbnail_url = get_the_post_thumbnail_url($post_id);
     $post_categories = get_the_category($post_id);
-    $post_author = get_the_author();
+    $post_author = get_the_author($post_id);
+    $post_author_id = $post->post_author;
+    $post_author_name = get_the_author_meta( 'display_name', $post_author_id );
   ?>
   <div class="flex p-2 mb-3">
 
@@ -74,8 +76,9 @@ if ( count($popular_posts) > 0 ):
       <p class="text-sm mb-1 italic">
         <a
           href=<?= esc_url("/author/" . $post_author) ?>
+          class="hover:underline"
         >
-          <?= esc_html( $post_author )?>
+          <?= esc_html( $post_author_name )?>
         </a>
       </p>
 

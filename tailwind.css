@@ -1,6 +1,6 @@
 /*
 Theme Name: Isolasia
-Version: 0.1.0
+Version: 0.2.2
 Author: KI-Freiwillige
 */
 
@@ -200,5 +200,15 @@ Author: KI-Freiwillige
 
   & input[type='submit'] {
     @apply px-2 py-1 bg-stone-950 text-white cursor-pointer;
+  }
+}
+
+.isolasia_posts-page-pagination {
+  & a {
+    @apply px-1 hover:underline;
+  }
+
+  & span {
+    @apply text-emerald-800 font-bold;
   }
 }

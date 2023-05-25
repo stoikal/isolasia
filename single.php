@@ -26,6 +26,7 @@
             <span>
               <a
                 href=<?= esc_url("/author/" . $author_name) ?>
+                class="hover:underline"
               >
                 <?= esc_html($author_name )?>
               </a>

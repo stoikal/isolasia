@@ -50,6 +50,7 @@ if ( count($latest_posts) > 0 ):
               <img
                 src=<?= $thumbnail_url ?>
                 class="object-cover w-full h-full transition group-hover:scale-110"
+                loading="lazy"
               >
               <?php endif;?>
             </a>
@@ -135,6 +136,7 @@ if ( count($latest_posts) > 0 ):
                 <img
                   src=<?= esc_url($thumbnail_url) ?>
                   class="object-cover w-full h-full transition group-hover:scale-110"
+                  loading="lazy"
                 >
                 <?php endif;?>
               </a>

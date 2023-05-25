@@ -48,6 +48,7 @@ include 'inc/options.php';
           <img
             src="<?=esc_url($logo_url)?>"
             alt="logo"
+            loading="lazy"
           >
         </a>
         <?php endif;?>

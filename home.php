@@ -39,6 +39,7 @@ get_header();
           <?php endwhile; ?>
       <?php endif; ?>
     </main>
+
     <nav class="isolasia_posts-page-pagination px-10 text-left">
       <?php
       global $wp_query;
@@ -71,6 +72,8 @@ get_header();
     </aside>
   </div>
 </div>
+
+
 
 <?php
 get_footer();
