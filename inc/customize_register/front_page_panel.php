@@ -1,4 +1,5 @@
 <?php
+include 'homepage_page_section.php';
 include 'recent_posts_section.php';
 include 'popular_posts_section.php';
 
@@ -7,6 +8,7 @@ function front_page_panel($wp_customize) {
     'title' => 'Isolasia - Home Page',
   ));
 
+  homepage_page_section($wp_customize);
   recent_posts_section($wp_customize);
   popular_posts_section($wp_customize);
 }

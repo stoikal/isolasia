@@ -47,6 +47,7 @@ if ( count($popular_posts) > 0 ):
   ?>
   <div class="flex p-2 mb-3">
 
+    <?php if ( $pp_show_thumbnails) :?>
     <div class="w-1/3">
       <a href="<?= esc_url($post_link)?>">
         <img
@@ -56,7 +57,14 @@ if ( count($popular_posts) > 0 ):
         >
       </a>
     </div>
-    <div class="w-2/3 pr-2 pl-4 text-left">
+    <?php endif; ?>
+
+    <div
+      class="
+        pr-2 text-left
+        <?= $pp_show_thumbnails ? 'w-2/3 pl-4' : 'w-full'?>
+      "
+    >
       <h2 class="font-serif mb-1">
         <a
           href="<?= esc_url($post_link)?>"
@@ -67,12 +75,7 @@ if ( count($popular_posts) > 0 ):
       </h2>
 
 
-      <?php if ( $pp_show_excerpts) :?>
-      <p class="mb-1 text-sm">
-        <?= esc_html($post_excerpt) ?>
-      </p>
-      <?php endif; ?>
-
+      <?php if ( $pp_show_authors) :?>
       <p class="text-sm mb-1 italic">
         <a
           href=<?= esc_url("/author/" . $post_author) ?>
@@ -81,6 +84,16 @@ if ( count($popular_posts) > 0 ):
           <?= esc_html( $post_author_name )?>
         </a>
       </p>
+      <?php endif; ?>
+
+
+      <?php if ( $pp_show_excerpts) :?>
+      <p class="mb-1 text-sm">
+        <?= esc_html($post_excerpt) ?>
+      </p>
+      <?php endif; ?>
+
+
 
     </div>
   </div>

@@ -25,7 +25,7 @@ function recent_posts_section($wp_customize) {
   ));
 
   $wp_customize->add_setting('rp_rounded_thumbnail', array(
-    'default' => true,
+    'default' => false,
     'sanitize_callback' => 'sanitize_key',
   ));
 

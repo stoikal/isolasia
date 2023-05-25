@@ -12,7 +12,7 @@ get_header();
   <div class="flex flex-wrap mb-20">
     <div class="w-full md:w-2/3">
     <?php
-      if ( have_posts() ) :
+      if ( $ho_show_page && have_posts() ) :
         $margin_x_arr = array('mx-0', 'mx-1', 'mx-2', 'mx-3', 'mx-4');
         $margin_x = $margin_x_arr[$rp_gutter];
         // Load posts loop.
@@ -20,7 +20,12 @@ get_header();
           the_post();
     
     ?>
-      <article class="p-4">
+      <article
+        class="
+          p-4 mb-4
+          <?= $ho_show_border ? 'border' : '' ?>
+        "
+      >
         <div
           class="
             mb-4 border-b border-gray-200
@@ -37,8 +42,6 @@ get_header();
       </article>
       <?php endwhile; ?>
     <?php endif; ?>
-
-
 
     <?php get_template_part( 'template-parts/front-page/popular-posts' );?>
     </div>
