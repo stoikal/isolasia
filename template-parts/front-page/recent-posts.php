@@ -63,7 +63,8 @@ if ( count($latest_posts) > 0 ):
               ?>
               <a
                 class="
-                text-white px-1 text-xs mr-1 inline-block
+                  px-1 text-xs mr-1 inline-block
+                  <?= $rp_color_text_category ?>
                   <?= $rp_color_bg_category ?>
                 "
                 href="<?= esc_url( $category_link ) ?>"
@@ -149,7 +150,8 @@ if ( count($latest_posts) > 0 ):
                 ?>
                 <a
                   class="
-                  text-white px-1 mr-1 text-xs inline-block
+                    px-1 mr-1 text-xs inline-block
+                    <?= $rp_color_text_category ?>
                     <?= $rp_color_bg_category ?>
                   "
                   href="<?= esc_url( $category_link ) ?>"

@@ -10,17 +10,17 @@ Author: KI-Freiwillige
 
 @layer base {
   html {
-    font-family: Raleway, system-ui, sans-serif;
+    font-family: Montserrat, system-ui, sans-serif;
   }
 }
 
 /* PRIMARY MENU */
 
 .isolasia_primary-menu {
-  @apply flex text-sm;
+  @apply flex;
   
   & a {
-    @apply mx-2 transition-colors
+    @apply mx-2 p-2 font-medium inline-block uppercase hover:underline;
   }
 
   & ul, li {
@@ -29,6 +29,10 @@ Author: KI-Freiwillige
 }
 
 .isolasia_primary-menu-sidebar {
+  & a {
+    @apply p-2 inline-block hover:underline;
+  }
+
   & li li {
     @apply pl-4;
   }
@@ -115,8 +119,12 @@ Author: KI-Freiwillige
     @apply font-display;
   }
 
+  & h1, h2 {
+    @apply text-lg;
+  }
+
   & hr {
-    @apply border-0 border-b border-gray-200 mb-5;
+    @apply border-0 border-b border-black mb-5;
   }
 
   & select {

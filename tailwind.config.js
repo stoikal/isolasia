@@ -6,8 +6,11 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Raleway', 'ui-sans-serif', 'system-ui','sans-serif'],
-        'serif': ['Merriweather', 'ui-serif', 'serif'],
-        'display': ['Arvo', 'Merriweather']
+        'serif': ['Source Serif Pro ', 'ui-serif', 'serif'],
+        'display': ['Arvo', 'Source Serif Pro ']
+      },
+      screens: {
+        'xl': '1200px',
       },
     },
   },

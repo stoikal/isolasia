@@ -25,11 +25,11 @@ if ( count($popular_posts) > 0 ):
 >
   <div
     class="
-      mb-4 border-b border-gray-200
+      mb-4 border-b border-black
       <?= $title_margin_x ?>
     "
   >
-    <span class="font-display">
+    <span class="font-display text-lg">
       TERPOPULER
     </span>
   </div>
@@ -49,7 +49,7 @@ if ( count($popular_posts) > 0 ):
 
     <?php if ( $pp_show_thumbnails) :?>
     <div class="w-1/3">
-      <a href="<?= esc_url($post_link)?>">
+      <a href="<?= esc_url($post_link)?>" tabindex="-1">
         <img
           src=<?= esc_url($thumbnail_url) ?>
           class="object-cover w-full aspect-[4/3]"

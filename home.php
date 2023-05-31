@@ -1,11 +1,17 @@
 <?php
 include 'inc/options.php';
+// Posts Page
 
 get_header();
 ?>
 
 <div class="max-w-screen-lg mx-auto flex flex-wrap py-8 mb-20">
-  <div class="w-full md:w-2/3">
+  <div
+    class="
+      w-full
+      <?= $si_show_sidebar_page ? 'md:w-2/3' : '' ?>
+    "
+  >
     <main class="p-6 flex flex-wrap">  
       <?php
       if ( have_posts() ) :
@@ -58,6 +64,7 @@ get_header();
     </nav>
   </div>
 
+  <?php if ( $si_show_sidebar_page ) : ?>
   <div class="w-full md:w-1/3 md:pl-8">
     <aside class="<?= $si_show_border ? 'border' : '' ?> p-6">
       <?php
@@ -71,6 +78,7 @@ get_header();
       <?php endif; ?>
     </aside>
   </div>
+  <?php endif; ?>
 </div>
 
 

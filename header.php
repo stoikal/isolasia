@@ -8,11 +8,13 @@ include 'inc/options.php';
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Fjalla+One&family=Raleway:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body
+  style="background-color: <?= $co_body_bg ?> "
+>
 	<a
     href="#primary"
     type="button"
@@ -23,11 +25,16 @@ include 'inc/options.php';
 
 	<header
     class="
-      relative
+      relative 
       <?= $he_show_border ? 'border-b' : ''?>
     "
+    style="
+      background-color: <?= $he_color_bg ?>;
+      color: <?= $he_color_text ?>;
+      border-color: <?= $he_color_border ?>;
+    "
   >
-    <div class="max-w-screen-lg mx-auto flex items-end">
+    <div class="max-w-screen-xl mx-auto flex items-end">
       <?php if ( $he_align == 'center' ) : ?>
       <div class="md:hidden h-14 w-14"></div>
       <?php endif; ?>
@@ -70,12 +77,8 @@ include 'inc/options.php';
             <?php
             wp_nav_menu(
               array(
-                'menu' => 'primary',
                 'menu_class' => 'isolasia_primary-menu',
                 'theme_location' => 'primary',
-                'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-                'link_before' => "<span class=\"p-2 $he_color_link_hover inline-block\">",
-                'link_after' => '</span>',
                 'fallback_cb' => false
               )
             );
@@ -103,18 +106,19 @@ include 'inc/options.php';
       hidden md:block
       <?= $he_show_border ? 'border-b' : ''?>
     "
+    style="
+      background-color: <?= $he_color_bg ?>;
+      color: <?= $he_color_text ?>;
+      border-color: <?= $he_color_border ?>;
+    "
   >
     <div class="max-w-full mx-auto text-center flex justify-center">
       <?php if ( has_nav_menu( 'primary' ) ) : ?>
         <?php
         wp_nav_menu(
           array(
-            'menu' => 'primary',
-            'menu_class' => 'isolasia_primary-menu',
             'theme_location' => 'primary',
-            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 $he_color_link_hover inline-block\">",
-            'link_after' => '</span>',
+            'menu_class' => 'isolasia_primary-menu',
             'fallback_cb' => false
           )
         );
@@ -140,12 +144,8 @@ include 'inc/options.php';
         <?php
         wp_nav_menu(
           array(
-            'menu' => 'primary',
-            'menu_class' => 'isolasia_primary-menu-sidebar',
             'theme_location' => 'primary',
-            'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 $he_color_link_hover inline-block\">",
-            'link_after' => '</span>',
+            'menu_class' => 'isolasia_primary-menu-sidebar',
             'fallback_cb' => false
           )
         );

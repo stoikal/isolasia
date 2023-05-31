@@ -25,8 +25,8 @@ function isolasia_menus() {
   register_nav_menus(
     array(
       'primary' => 'Header Menu',
-      'footer-1' => 'Footer Menu 1',
-      'footer-2' => 'Footer Menu 2'
+      'footer_1' => 'Footer Menu 1',
+      'footer_2' => 'Footer Menu 2'
     )
   );
 }
@@ -68,4 +68,5 @@ require 'inc/customize_register/header_section.php';
 require 'inc/customize_register/front_page_panel.php';
 require 'inc/customize_register/sidebar_section.php';
 require 'inc/customize_register/footer_panel.php';
+require 'inc/customize_register/colors_section.php';
 #endregion CUSTOMIZER SETTINGS

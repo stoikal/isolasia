@@ -6,11 +6,16 @@ $FORCE_TAILWIND_TO_GENERATE_CLASSES = '-mx-2 hover:shadow underline no-underline
 get_header();
 ?>
 
-<div class="max-w-screen-lg mx-auto overflow-hidden pt-8">
+<div class="max-w-screen-xl mx-auto overflow-hidden pt-8">
   <?php get_template_part( 'template-parts/front-page/recent-posts' );?>
 
   <div class="flex flex-wrap mb-20">
-    <div class="w-full md:w-2/3">
+    <div
+      class="
+        w-full
+        <?= $si_show_sidebar_home ? 'md:w-2/3' : '' ?>
+      "
+    >
     <?php
       if ( $ho_show_page && have_posts() ) :
         $margin_x_arr = array('mx-0', 'mx-1', 'mx-2', 'mx-3', 'mx-4');
@@ -28,11 +33,11 @@ get_header();
       >
         <div
           class="
-            mb-4 border-b border-gray-200
+            mb-4 border-b border-black
             <?= $margin_x ?>
           "
         >
-          <h2 class="font-display">
+          <h2 class="font-display text-lg">
             <?= the_title(); ?>
           </h2>
         </div>
@@ -46,6 +51,7 @@ get_header();
     <?php get_template_part( 'template-parts/front-page/popular-posts' );?>
     </div>
 
+    <?php if ( $si_show_sidebar_home ) : ?>
     <div class="w-full md:w-1/3 md:pl-7">
       <?php
       // class names have to be written in full to trigger tailwindcss
@@ -62,6 +68,7 @@ get_header();
       <?php endif; ?>
 
     </div>
+    <?php endif; ?>
   </div>
 </div>
 

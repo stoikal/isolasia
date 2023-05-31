@@ -5,25 +5,28 @@ include 'inc/options.php';
   <footer
     class="
       text-center p-6
-      <?= $fo_color_bg ?> 
-      <?= $fo_color_text ?> 
+      border-t
+    "
+    style="
+      background-color: <?= $fo_color_bg ?>;
+      color: <?= $fo_color_text ?>;
+      border-color: <?= $fo_color_border ?>;
     "
   >
     <div class="text-sm flex justify-center">
-      <?php if ( has_nav_menu( 'footer-1' ) ) : ?>
+      <?php if ( has_nav_menu( 'footer_1' ) ) : ?>
       <div
         class="
           mb-6
-          <?= has_nav_menu( 'footer-2' ) ? 'w-1/2 text-right' : ''?>
+          <?= has_nav_menu( 'footer_2' ) ? 'w-1/2 text-right' : ''?>
         "
       >
         <?php
         wp_nav_menu(
           array(
-            'menu' => 'footer-1',
-            'theme_location' => 'footer-1',
+            'theme_location' => 'footer_1',
             'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 $fo_color_text_hover inline-block\">",
+            'link_before' => "<span class=\"p-2 hover:opacity-80 inline-block\">",
             'link_after' => '</span>',
             'fallback_cb' => false
           )
@@ -32,20 +35,19 @@ include 'inc/options.php';
       </div>
       <?php endif; ?>
 
-      <?php if ( has_nav_menu( 'footer-2' ) ) : ?>
+      <?php if ( has_nav_menu( 'footer_2' ) ) : ?>
         <div
           class="
             mb-6
-            <?= has_nav_menu( 'footer-1' ) ? 'w-1/2 text-left' : ''?>
+            <?= has_nav_menu( 'footer_1' ) ? 'w-1/2 text-left' : ''?>
           "
         >
         <?php
         wp_nav_menu(
           array(
-            'menu' => 'footer-2',
-            'theme_location' => 'footer-2',
+            'theme_location' => 'footer_2',
             'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 $fo_color_text_hover inline-block\">",
+            'link_before' => "<span class=\"p-2 hover:opacity-80 inline-block\">",
             'link_after' => '</span>',
             'fallback_cb' => false
           )
@@ -69,7 +71,7 @@ include 'inc/options.php';
       ?>
         <a
           href="<?= esc_url($link) ?>"
-          class="inline-block p-1 mx-1 <?= $fo_color_text_hover ?> "
+          class="inline-block p-1 mx-1 hover:opacity-80"
         >
           <i class="fab fa-lg <?= esc_html($icon) ?>" ></i>
         </a>
