@@ -8,9 +8,10 @@ include 'inc/options.php';
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<?php wp_head(); ?>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+  <?php wp_head(); ?>
 </head>
 <body
   style="background-color: <?= $co_body_bg ?> "
@@ -25,7 +26,7 @@ include 'inc/options.php';
 
 	<header
     class="
-      relative 
+      relative
       <?= $he_show_border ? 'border-b' : ''?>
     "
     style="
@@ -41,8 +42,8 @@ include 'inc/options.php';
 
       <div
         class="
-          flex-1 p-3 items-end
-          <?= $he_align == 'justify' ? 'flex' : 'text-center' ?>
+          flex-1 items-end 
+          <?= $he_align == 'justify' ? 'flex pl-4 py-2' : 'text-center py-4' ?>
         "
       >
         <?php
@@ -51,27 +52,29 @@ include 'inc/options.php';
 
         if ( $he_show_logo && $logo_url ) :
         ?>
-        <a href="/" class="inline-block flex-shrink-0">
-          <img
-            src="<?=esc_url($logo_url)?>"
-            alt="logo"
-            loading="lazy"
-          >
-        </a>
+        <div class="flex-shrink-0 flex align-baseline justify-center">
+          <a href="/" class="inline-block ">
+            <img
+              src="<?=esc_url($logo_url)?>"
+              alt="logo"
+              loading="lazy"
+            >
+          </a>
+        </div>
         <?php endif;?>
 
         
         <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
-          <a href="/">
-            <h1 class="w-full text-2xl py-1 px-2 font-display">
+          <h1 class="w-full text-2xl pl-2 font-medium">
+            <a href="/" class="hover:underline">
               <?php bloginfo( 'name' ); ?>
-            </h1>
-          </a>
+            </a>
+          </h1>
         <?php endif;?>
       </div>
 
       <?php if ( $he_align == 'justify' ) : ?>
-      <nav class="p-3 hidden md:block">
+      <nav class="px-3 py-1 hidden md:block">
         <div class="max-w-full mx-auto text-center flex justify-center">
           <?php if ( has_nav_menu( 'primary' ) ) : ?>
             <?php
@@ -88,11 +91,11 @@ include 'inc/options.php';
       </nav>
       <?php endif; ?>
 
-      <div class="md:hidden flex-0 p-1 py-1.5">
+      <div class="md:hidden flex-0 px-1">
         <button
           id="side-drawer-trigger"
           type="button"
-          class="w-12 h-12 pb-0.5"
+          class="w-12 h-12"
         >
           <i class="fas fa-bars fa-lg"></i>
         </button>
@@ -137,7 +140,7 @@ include 'inc/options.php';
 
   <div
     id="side-drawer"
-    class="transition duration-200 fixed overflow-hidden top-0 left-0 h-full bg-white z-20 -translate-x-full p-4"
+    class="md:hidden transition duration-200 fixed overflow-hidden top-0 left-0 h-full bg-white z-20 -translate-x-full p-4"
   >
     <nav class="py-6 pr-14">
       <?php if ( has_nav_menu( 'primary' ) ) : ?>

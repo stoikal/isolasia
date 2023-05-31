@@ -25,8 +25,8 @@ function isolasia_menus() {
   register_nav_menus(
     array(
       'primary' => 'Header Menu',
-      'footer_1' => 'Footer Menu 1',
-      'footer_2' => 'Footer Menu 2'
+      'footer_1' => 'Footer Menu (left)',
+      'footer_2' => 'Footer Menu (right)'
     )
   );
 }
