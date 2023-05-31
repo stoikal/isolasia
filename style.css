@@ -909,6 +909,11 @@ html {
   padding-bottom: 2rem !important;
 }
 
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
 .pb-0 {
   padding-bottom: 0px !important;
 }
@@ -943,6 +948,10 @@ html {
 
 .pt-8 {
   padding-top: 2rem !important;
+}
+
+.pt-3 {
+  padding-top: 0.75rem !important;
 }
 
 .text-left {
@@ -1374,6 +1383,18 @@ html {
 
   .md\:aspect-\[8\/3\] {
     aspect-ratio: 8/3 !important;
+  }
+
+  .md\:aspect-auto {
+    aspect-ratio: auto !important;
+  }
+
+  .md\:aspect-\[6\/3\] {
+    aspect-ratio: 6/3 !important;
+  }
+
+  .md\:aspect-\[5\/3\] {
+    aspect-ratio: 5/3 !important;
   }
 
   .md\:w-1\/2 {

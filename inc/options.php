@@ -30,8 +30,8 @@ $ho_show_border = get_theme_mod( 'ho_show_border', false );
 
 // RECENT POSTS
 $rp_gutter = get_theme_mod( 'rp_gutter_size', 2 );
+$rp_is_details_outside = get_theme_mod( 'rp_is_details_outside', false );
 $rp_is_rounded = get_theme_mod( 'rp_rounded_thumbnail', false );
-$rp_large_first_thumbnail = get_theme_mod( 'rp_large_first_thumbnail', false );;
 $rp_show_frame_border = get_theme_mod( 'rp_show_frame_border', false );
 $rp_color_bg_category = 'bg-black';
 $rp_color_text_category = 'text-white';
