@@ -25,12 +25,12 @@ function recent_posts_section($wp_customize) {
   ));
 
   $wp_customize->add_setting('rp_is_details_outside', array(
-    'default' => false,
+    'default' => true,
     'sanitize_callback' => 'sanitize_key',
   ));
 
   $wp_customize->add_control('rp_is_details_outside_control', array(
-    'label' => 'Show details outside of picture',
+    'label' => 'Show details outside of thumbnails',
     'section' => 'recent_posts',
     'settings' => 'rp_is_details_outside',
     'type' => 'checkbox',
