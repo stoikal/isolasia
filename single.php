@@ -40,7 +40,15 @@
           </div>
     
           <div class="isolasia_post-content p-6">
-            <?php the_content() ?>
+            <?php
+            the_content();
+            wp_link_pages(
+              array(
+                'before' => '<p class="post-nav-links">' . __( 'Halaman:' ),
+                'after' => '</p>',
+              )
+            )
+            ?>
           </div>
         </main>
         <?php endwhile?>

@@ -111,6 +111,17 @@ Author: KI-Freiwillige
   & pre {
     @apply bg-gray-200 p-6;
   }
+
+  & p.post-nav-links {
+    @apply pt-10;
+
+    & a {
+      @apply px-2 no-underline hover:underline;
+    }
+    & span {
+      @apply px-2 font-bold;
+    }
+  }
 }
 
 /* FRONT PAGE SIDEBAR */
