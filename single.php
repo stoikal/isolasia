@@ -1,9 +1,13 @@
-<?php get_header(); ?>
+<?php
+include 'inc/options.php';
+
+get_header();
+?>
 <div class="pt-7 overflow-hidden">
   <main id="main-content" class="mb-10">
     <article
       id="primary-content"
-      class="max-w-screen-sm mx-auto"
+      class=""
     >
       <?php if (have_posts()): ?>
         <?php
@@ -12,10 +16,11 @@
             $title = get_the_title();
             $post_date = get_the_date();
             $author_name = get_the_author();
+            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
         ?>
         
-        <header class="p-6">
-          <h1 class="text-4xl font-serif mb-2"><?= $title ?></h1>
+        <header class="p-6 <?= $sp_max_width ?> mx-auto">
+          <h1 class="<?= $sp_font_size_title ?> font-serif mb-4"><?= $title ?></h1>
           <div>
             <span>
               <?= $post_date ?>
@@ -32,14 +37,30 @@
               </a>
             </span>
           </div>
-          </header>
+        </header>
         
         <main class="mb-4">
-          <div class="mb-4">
-            <?php the_post_thumbnail() ?>
+          <div
+            class="
+              mb-4 mx-auto
+              <?= $sp_thumbnail_full_width ? '' : $sp_max_width . ' ' . $sp_image_padding ?>
+            "
+          >
+            <img
+              src="<?php echo esc_url($thumbnail_url); ?>"
+              alt="<?php the_title_attribute(); ?>"
+              class="w-full max-h-[32rem] object-cover"
+            >
           </div>
     
-          <div class="isolasia_post-content p-6">
+          <div
+            class="
+              isolasia_post-content
+              p-6 mx-auto
+              <?= $sp_max_width ?>
+              <?= $sp_font_size_body ?>
+            "
+          >
             <?php
             the_content();
             wp_link_pages(
@@ -54,7 +75,7 @@
         <?php endwhile?>
       <?php endif ?>
 
-      <footer class="p-6">
+      <footer class="p-6 <?= $sp_max_width ?> mx-auto">
         <?php if ( ! is_singular( 'attachment' ) ) : ?>
           <?php get_template_part( 'template-parts/post/author-bio' ); ?>
         <?php endif; ?>
@@ -62,7 +83,7 @@
     </article>
   </main>
 
-  <div class="max-w-screen-sm mx-auto">
+  <div class="<?= $sp_max_width ?> mx-auto">
     <?php
     if ( comments_open() || get_comments_number() ) {
       comments_template();

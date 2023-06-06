@@ -5,7 +5,7 @@ include 'inc/options.php';
 get_header();
 ?>
 
-<div class="max-w-screen-lg mx-auto flex flex-wrap py-8 mb-20">
+<div class="max-w-screen-md mx-auto flex flex-wrap py-8 mb-20">
   <div
     class="
       w-full
@@ -21,10 +21,10 @@ get_header();
       
       ?>
         <article>
-          <h1 class="text-4xl font-serif mb-8">
+          <h1 class="text-5xl font-serif mb-8">
             <?= the_title(); ?>
           </h1>
-          <div class="isolasia_post-content">
+          <div class="isolasia_post-content text-lg">
             <?= the_content(); ?>
           </div>
         </article>

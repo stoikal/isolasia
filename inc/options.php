@@ -31,6 +31,24 @@ $he_max_width = 'max-w-screen-xl'; // max-w-screen-xl
 $ho_show_page = get_theme_mod( 'ho_show_page', true );
 $ho_show_border = get_theme_mod( 'ho_show_border', false );
 
+// SINGLE POST
+$sp_font_sizes = array(
+  'md' => array(
+    'title' => 'text-4xl',
+    'body' => 'text-base'
+  ),
+  'lg' => array(
+    'title' => 'text-5xl',
+    'body' => 'text-lg'
+  )
+);
+$sp_thumbnail_full_width = get_theme_mod( 'sp_thumbnail_full_width', true );
+$sp_font_size = get_theme_mod( 'sp_font_size', 'lg' );
+$sp_font_size_title = $sp_font_sizes[$sp_font_size]['title'];
+$sp_font_size_body = $sp_font_sizes[$sp_font_size]['body'];
+$sp_max_width = 'max-w-screen-md'; // max-w-screen-md
+$sp_image_padding = 'md:px-6';
+
 // RECENT POSTS
 $rp_gutter = get_theme_mod( 'rp_gutter_size', 2 );
 $rp_is_details_outside = get_theme_mod( 'rp_is_details_outside', true );

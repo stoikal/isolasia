@@ -141,7 +141,7 @@ include 'inc/options.php';
   </nav>
   <?php endif; ?>
 
-  <div
+  <!-- <div
     class="
     border-black
       <?= $he_show_border ? 'border-b' : ''?>
@@ -169,7 +169,7 @@ include 'inc/options.php';
         <i class="fas fa-search"></i>
       </button>
     </form>
-  </div>
+  </div> -->
 
   <div
     id="side-drawer-overlay"       

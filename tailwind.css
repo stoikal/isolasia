@@ -116,10 +116,10 @@ Author: KI-Freiwillige
     @apply pt-10;
 
     & a {
-      @apply px-2 no-underline hover:underline;
+      @apply p-3 no-underline hover:underline;
     }
     & span {
-      @apply px-2 font-bold;
+      @apply p-3 font-bold;
     }
   }
 }
