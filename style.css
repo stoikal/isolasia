@@ -635,6 +635,10 @@ html {
   margin-bottom: 2rem !important;
 }
 
+.mb-px {
+  margin-bottom: 1px !important;
+}
+
 .mr-1 {
   margin-right: 0.25rem !important;
 }
@@ -661,6 +665,14 @@ html {
 
 .aspect-\[8\/3\] {
   aspect-ratio: 8/3 !important;
+}
+
+.aspect-\[727\/525\] {
+  aspect-ratio: 727/525 !important;
+}
+
+.aspect-\[4\/2\] {
+  aspect-ratio: 4/2 !important;
 }
 
 .h-12 {
@@ -715,6 +727,10 @@ html {
   max-width: 1280px !important;
 }
 
+.max-w-screen-2xl {
+  max-width: 1536px !important;
+}
+
 .flex-1 {
   flex: 1 1 0% !important;
 }
@@ -730,6 +746,11 @@ html {
 
 .-translate-y-full {
   --tw-translate-y: -100% !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.rotate-6 {
+  --tw-rotate: 6deg !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
@@ -961,6 +982,10 @@ html {
   font-family: Arvo, Source Serif Pro !important;
 }
 
+.font-sans {
+  font-family: Montserrat, ui-sans-serif, system-ui, sans-serif !important;
+}
+
 .font-serif {
   font-family: Source Serif Pro, ui-serif, serif !important;
 }
@@ -1004,8 +1029,8 @@ html {
   font-weight: 700 !important;
 }
 
-.font-medium {
-  font-weight: 500 !important;
+.font-semibold {
+  font-weight: 600 !important;
 }
 
 .text-black {
@@ -1248,8 +1273,7 @@ html {
 }
 
 .isolasia_comment-list .reply:hover {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
+  text-decoration-line: underline;
 }
 
 .isolasia_comment-pagination {
@@ -1261,8 +1285,7 @@ html {
 }
 
 .isolasia_comment-pagination a:hover {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
+  text-decoration-line: underline;
 }
 
 .isolasia_comment-form label {
@@ -1319,21 +1342,90 @@ html {
   color: rgb(6 95 70 / var(--tw-text-opacity));
 }
 
+.hover\:mb-0:hover {
+  margin-bottom: 0px !important;
+}
+
+.hover\:border-b:hover {
+  border-bottom-width: 1px !important;
+}
+
 .hover\:border-black:hover {
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
+}
+
+.hover\:bg-emerald-500:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-emerald-900:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(6 78 59 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-emerald-950:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(2 44 34 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-gray-500:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-gray-800:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:underline:hover {
   text-decoration-line: underline !important;
 }
 
-.hover\:opacity-80:hover {
-  opacity: 0.8 !important;
-}
-
 .focus\:translate-y-0:focus {
   --tw-translate-y: 0px !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+}
+
+.group:hover .group-hover\:rotate-6 {
+  --tw-rotate: 6deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.group:hover .group-hover\:-rotate-6 {
+  --tw-rotate: -6deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.group:hover .group-hover\:-rotate-3 {
+  --tw-rotate: -3deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.group:hover .group-hover\:-rotate-2 {
+  --tw-rotate: -2deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.group:hover .group-hover\:-rotate-1 {
+  --tw-rotate: -1deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.group:hover .group-hover\:-rotate-12 {
+  --tw-rotate: -12deg !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
@@ -1366,6 +1458,14 @@ html {
     aspect-ratio: auto !important;
   }
 
+  .md\:aspect-\[4\/3\] {
+    aspect-ratio: 4/3 !important;
+  }
+
+  .md\:aspect-\[727\/525\] {
+    aspect-ratio: 727/525 !important;
+  }
+
   .md\:w-1\/2 {
     width: 50% !important;
   }
@@ -1390,5 +1490,22 @@ html {
 @media (min-width: 1024px) {
   .lg\:w-1\/4 {
     width: 25% !important;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
   }
 }

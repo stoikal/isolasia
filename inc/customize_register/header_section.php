@@ -55,6 +55,24 @@ function header_section($wp_customize) {
       'center' => 'Center',
     ),
   ));
+
+  $color_settings = array(
+    'co_header_bg' => ['Background Color', '#ffffff'],
+    'co_header_title' => ['Title Color', '#000000'],
+    'co_header_text' => ['Text Color', '#000000'],
+    'co_header_border' => ['Border Color', '#000000'],
+  );
+
+  foreach ($color_settings as $setting_name => $options) {
+    $control_name = 'header_' . $setting_name . '_control';
+    $label = $options[0];
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $control_name, array(
+      'label' => $label,
+      'section' => 'header_section',
+      'settings' => $setting_name,
+    )));
+  }
 }
 
 add_action('customize_register', 'header_section');

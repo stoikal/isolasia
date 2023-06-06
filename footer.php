@@ -25,8 +25,9 @@ include 'inc/options.php';
         wp_nav_menu(
           array(
             'theme_location' => 'footer_1',
+            'menu_class' => '',
             'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 hover:opacity-80 inline-block\">",
+            'link_before' => "<span class=\"p-2 hover:underline inline-block\">",
             'link_after' => '</span>',
             'fallback_cb' => false
           )
@@ -47,7 +48,7 @@ include 'inc/options.php';
           array(
             'theme_location' => 'footer_2',
             'items_wrap' => '<ul class="%2$s">%3$s</ul>',
-            'link_before' => "<span class=\"p-2 hover:opacity-80 inline-block\">",
+            'link_before' => "<span class=\"p-2 hover:underline inline-block\">",
             'link_after' => '</span>',
             'fallback_cb' => false
           )
@@ -71,7 +72,10 @@ include 'inc/options.php';
       ?>
         <a
           href="<?= esc_url($link) ?>"
-          class="inline-block p-1 mx-1 hover:opacity-80"
+          class="inline-block p-1 mx-1 mb-px hover:mb-0 hover:border-b"
+          style="
+            border-color: <?= $fo_color_text ?>
+          "
         >
           <i class="fab fa-lg <?= esc_html($icon) ?>" ></i>
         </a>

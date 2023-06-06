@@ -29,7 +29,7 @@ if ( count($popular_posts) > 0 ):
       <?= $title_margin_x ?>
     "
   >
-    <span class="font-display text-lg text-black">
+    <span class="font-sans text-xl text-black">
       TERPOPULER
     </span>
   </div>

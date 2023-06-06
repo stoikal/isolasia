@@ -64,9 +64,9 @@ function isolasia_widgets_init() {
 add_action( 'widgets_init', 'isolasia_widgets_init' );
 
 #region CUSTOMIZER SETTINGS
+require 'inc/customize_register/colors_section.php';
 require 'inc/customize_register/header_section.php';
 require 'inc/customize_register/front_page_panel.php';
 require 'inc/customize_register/sidebar_section.php';
 require 'inc/customize_register/footer_panel.php';
-require 'inc/customize_register/colors_section.php';
 #endregion CUSTOMIZER SETTINGS

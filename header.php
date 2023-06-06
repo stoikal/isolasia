@@ -17,7 +17,7 @@ include 'inc/options.php';
   style="background-color: <?= $co_body_bg ?> "
 >
 	<a
-    href="#primary"
+    href="#main-content"
     type="button"
     class="absolute -translate-y-full focus:translate-y-0 bg-white p-2 z-10"
   >
@@ -35,7 +35,12 @@ include 'inc/options.php';
       border-color: <?= $he_color_border ?>;
     "
   >
-    <div class="max-w-screen-xl mx-auto flex items-end">
+    <div
+      class="
+        mx-auto flex items-end
+        <?= $he_max_width ?>
+      "
+    >
       <?php if ( $he_align == 'center' ) : ?>
       <div class="md:hidden h-14 w-14"></div>
       <?php endif; ?>
@@ -65,7 +70,12 @@ include 'inc/options.php';
 
         
         <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
-          <h1 class="w-full text-2xl pl-2 font-medium">
+          <h1
+            class="w-full text-2xl pl-2 font-sans font-semibold"
+            style="
+              color: <?= $he_color_title ?>;
+            "
+          >
             <a href="/" class="hover:underline">
               <?php bloginfo( 'name' ); ?>
             </a>
@@ -130,6 +140,36 @@ include 'inc/options.php';
     </div>
   </nav>
   <?php endif; ?>
+
+  <div
+    class="
+    border-black
+      <?= $he_show_border ? 'border-b' : ''?>
+    "
+  >
+    <form
+      id="isolasia_search-form"
+      class="
+        mx-auto px-4 text-right flex
+        <?= $he_max_width ?>
+      "
+      action="/"
+      method="GET"
+    >
+      <input
+        name="s"
+        type="text"
+        placeholder="Pencarian..."
+        class="focus:outline-none text-right px-2 flex-1"
+      >
+      <button
+        type="submit"
+        class="p-1"
+      >
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
 
   <div
     id="side-drawer-overlay"       

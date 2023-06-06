@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="pt-7 overflow-hidden">
-  <main class="mb-10">
+  <main id="main-content" class="mb-10">
     <article
       id="primary-content"
       class="max-w-screen-sm mx-auto"

@@ -8,12 +8,13 @@ $accent_color_1 = 'emerald';
 
 // COLORS
 $co_header_bg = get_theme_mod('co_header_bg', '#ffffff');
-$co_header_text = get_theme_mod('co_header_text', '#ffffff');
-$co_header_border = get_theme_mod('co_header_border', '#ffffff');
+$co_header_title = get_theme_mod('co_header_title', '#000000');
+$co_header_text = get_theme_mod('co_header_text', '#000000');
+$co_header_border = get_theme_mod('co_header_border', '#000000');
 $co_body_bg = get_theme_mod('co_body_bg', '#ffffff');
 $co_footer_bg = get_theme_mod('co_footer_bg', '#ffffff');
-$co_footer_text = get_theme_mod('co_footer_text', '#ffffff');
-$co_footer_border = get_theme_mod('co_footer_border', '#ffffff');
+$co_footer_text = get_theme_mod('co_footer_text', '#000000');
+$co_footer_border = get_theme_mod('co_footer_border', '#000000');
 
 // HEADER
 $he_show_logo = get_theme_mod( 'he_show_logo', true );
@@ -22,7 +23,9 @@ $he_show_border = get_theme_mod( 'he_show_border', true );
 $he_align = get_theme_mod( 'he_align', 'justify' );; // 'justify', 'center'
 $he_color_bg = $co_header_bg;
 $he_color_text = $co_header_text;
+$he_color_title = $co_header_title;
 $he_color_border = $co_header_border;
+$he_max_width = 'max-w-screen-xl'; // max-w-screen-xl
 
 // HOMEPAGE PAGE/POSTS
 $ho_show_page = get_theme_mod( 'ho_show_page', true );
@@ -35,6 +38,7 @@ $rp_is_rounded = get_theme_mod( 'rp_rounded_thumbnail', false );
 $rp_show_frame_border = get_theme_mod( 'rp_show_frame_border', false );
 $rp_color_bg_category = 'bg-black';
 $rp_color_text_category = 'text-white';
+$rp_max_witdh = 'max-w-screen-xl'; // max-w-screen-xl
 
 // POPULAR POSTS
 $pp_max_items = 8;

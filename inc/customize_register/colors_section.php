@@ -6,8 +6,9 @@ function colors_section($wp_customize) {
 
   $color_settings = array(
     'co_header_bg' => ['Header Background', '#ffffff'],
+    'co_header_title' => ['Header Title', '#000000'],
     'co_header_text' => ['Header Text', '#000000'],
-    'co_header_border' => ['Header Border', '#e5e7eb'],
+    'co_header_border' => ['Header Border', '#000000'],
     'co_body_bg' => ['Body Background', '#ffffff'],
     'co_footer_bg' => ['Footer Background', '#ffffff'],
     'co_footer_text' => ['Footer Text', '#000000'],
