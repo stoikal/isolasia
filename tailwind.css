@@ -217,6 +217,6 @@ Author: KI-Freiwillige
   }
 
   & span {
-    @apply text-emerald-800 font-bold;
+    @apply font-bold;
   }
 }

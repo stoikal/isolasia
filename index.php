@@ -1,5 +1,6 @@
 <?php
 include 'inc/options.php';
+// "Page" Page
 
 get_header();
 ?>
