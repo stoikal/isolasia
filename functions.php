@@ -71,3 +71,12 @@ require 'inc/customize_register/front_page_panel.php';
 require 'inc/customize_register/sidebar_section.php';
 require 'inc/customize_register/footer_panel.php';
 #endregion CUSTOMIZER SETTINGS
+
+function exclude_category_from_loop( $query ) {
+  if ( $query->is_main_query() && ! is_admin() ) {
+      $excluded_category = get_theme_mod( 'cc_category_id', '' );
+
+      $query->set( 'category__not_in', array( $excluded_category  ) );
+  }
+}
+add_action( 'pre_get_posts', 'exclude_category_from_loop' );

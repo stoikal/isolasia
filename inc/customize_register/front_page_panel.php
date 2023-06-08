@@ -2,6 +2,7 @@
 include 'homepage_page_section.php';
 include 'recent_posts_section.php';
 include 'popular_posts_section.php';
+include 'custom_category_section.php';
 
 function front_page_panel($wp_customize) {
   $wp_customize->add_panel('front_page', array(
@@ -11,6 +12,7 @@ function front_page_panel($wp_customize) {
   recent_posts_section($wp_customize);
   homepage_page_section($wp_customize);
   popular_posts_section($wp_customize);
+  custom_category_section($wp_customize);
 }
 
 add_action('customize_register', 'front_page_panel');

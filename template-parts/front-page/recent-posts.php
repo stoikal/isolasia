@@ -9,6 +9,7 @@ $latest_posts = get_posts(
   array(
     'numberposts' => 5,
     'post_type' => 'post',
+    'category__not_in' => array($cc_category_id),
   )
 );
 

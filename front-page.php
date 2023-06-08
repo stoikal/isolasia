@@ -20,6 +20,7 @@ get_header();
       >
         <?php get_template_part( 'template-parts/front-page/main-post' );?>
         <?php get_template_part( 'template-parts/front-page/popular-posts' );?>
+        <?php get_template_part( 'template-parts/front-page/custom-category' );?>
       </div>
   
       <?php if ( $si_show_sidebar_home ) : ?>

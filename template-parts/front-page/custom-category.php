@@ -4,14 +4,15 @@ include __DIR__ . '/../../inc/options.php';
 $margin_x_arr = array('mx-0', 'mx-1', 'mx-2', 'mx-3', 'mx-4');
 $title_margin_x = $margin_x_arr[$rp_gutter];
 
-// Retrieve most commented posts
+if ( empty($cc_category_id) ) return;
+
+$category_name = get_cat_name($cc_category_id);
+
 $posts = get_posts(
   array(
-    'category__not_in' => array($cc_category_id),
+    'category' => $cc_category_id,
     'numberposts' => $pp_max_items,
     'post_type' => 'post', // Post type
-    'orderby' => 'comment_count', // Order by comment count
-    'order' => 'DESC', // Sort in descending order
   )
 );
 
@@ -24,14 +25,15 @@ if ( count($posts) > 0 ):
     <?= $pp_show_border ? 'border' : '' ?>
   "
 >
+
   <div
     class="
       mb-4 border-b border-black
       <?= $title_margin_x ?>
     "
   >
-    <span class="font-display text-xl text-black">
-      TERPOPULER
+    <span class="font-display text-xl text-black uppercase">
+      <?= $category_name ?>
     </span>
   </div>
   <div class="flex flex-wrap">
@@ -72,7 +74,7 @@ if ( count($posts) > 0 ):
           <?= $pp_show_thumbnails ? 'w-2/3 pl-4' : 'w-full'?>
         "
       >
-        <h2 class="font-serif mb-1 text-lg">
+        <h2 class="font-serif mb-1 text-xl">
           <a
             href="<?= esc_url($post_link)?>"
             class="hover:underline"

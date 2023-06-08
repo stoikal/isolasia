@@ -61,11 +61,15 @@ $rp_color_text_category = 'text-white';
 $rp_max_witdh = 'max-w-screen-xl'; // max-w-screen-xl
 
 // POPULAR POSTS
-$pp_max_items = 8;
+$pp_max_items = 6;
 $pp_show_thumbnails = get_theme_mod( 'pp_show_thumbnails', false );
 $pp_show_authors = get_theme_mod( 'pp_show_authors', true );
 $pp_show_excerpts = get_theme_mod( 'pp_show_excerpts', false );
 $pp_show_border = get_theme_mod( 'pp_show_border', false );
+
+// CUSTOM CATEGORY POSTS
+$cc_max_items = 6;
+$cc_category_id = get_theme_mod( 'cc_category_id', '' );
 
 // SIDEBAR
 $si_show_sidebar_home = get_theme_mod( 'si_show_sidebar_home', false );

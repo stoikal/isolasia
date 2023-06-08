@@ -21,7 +21,7 @@ if ( $ho_show_page && have_posts() ) :
         <?= $margin_x ?>
       "
     >
-      <h2 class="font-display text-lg">
+      <h2 class="font-display text-xl uppercase">
         <?= the_title(); ?>
       </h2>
     </div>
