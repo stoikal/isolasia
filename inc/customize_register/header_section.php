@@ -40,6 +40,22 @@ function header_section($wp_customize) {
     'type' => 'checkbox',
   ));
 
+  $wp_customize->add_setting( 'he_border_width', array(
+    'default' => 'full',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  $wp_customize->add_control( 'he_border_width_control', array(
+    'label' => 'Border Width',
+    'section' => 'header_section',
+    'settings' => 'he_border_width',
+    'type' => 'select',
+    'choices' => array(
+      'full' => 'Full',
+      'center' => 'Center',
+    ),
+  ));
+
   $wp_customize->add_setting( 'he_align', array(
     'default' => 'justify',
     'sanitize_callback' => 'sanitize_text_field',

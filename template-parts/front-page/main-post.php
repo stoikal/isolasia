@@ -11,7 +11,7 @@ if ( $ho_show_page && have_posts() ) :
 ?>
   <article
     class="
-      p-4 mb-4
+      p-4 mb-8
       <?= $ho_show_border ? 'border' : '' ?>
     "
   >
@@ -21,7 +21,7 @@ if ( $ho_show_page && have_posts() ) :
         <?= $margin_x ?>
       "
     >
-      <h2 class="font-sans text-xl">
+      <h2 class="font-display text-lg">
         <?= the_title(); ?>
       </h2>
     </div>

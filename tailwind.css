@@ -17,10 +17,10 @@ Author: KI-Freiwillige
 /* PRIMARY MENU */
 
 .isolasia_primary-menu {
-  @apply flex;
+  @apply flex text-base font-semibold uppercase;
   
   & a {
-    @apply mx-2 p-2 font-semibold inline-block uppercase hover:underline;
+    @apply mx-2 p-2 inline-block hover:underline;
   }
 
   & ul, li {

@@ -20,11 +20,13 @@ $co_footer_border = get_theme_mod('co_footer_border', '#000000');
 $he_show_logo = get_theme_mod( 'he_show_logo', true );
 $he_show_site_title = get_theme_mod( 'he_show_site_title', true );
 $he_show_border = get_theme_mod( 'he_show_border', true );
-$he_align = get_theme_mod( 'he_align', 'justify' );; // 'justify', 'center'
+$he_align = get_theme_mod( 'he_align', 'justify' ); // 'justify', 'center'
 $he_color_bg = $co_header_bg;
 $he_color_text = $co_header_text;
 $he_color_title = $co_header_title;
 $he_color_border = $co_header_border;
+$he_border_width = get_theme_mod( 'he_border_width', 'full' );
+$he_is_border_full_width = $he_border_width == 'full';
 $he_max_width = 'max-w-screen-xl'; // max-w-screen-xl
 
 // HOMEPAGE PAGE/POSTS

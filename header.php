@@ -27,7 +27,7 @@ include 'inc/options.php';
 	<header
     class="
       relative
-      <?= $he_show_border ? 'border-b' : ''?>
+      <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
     "
     style="
       background-color: <?= $he_color_bg ?>;
@@ -37,78 +37,88 @@ include 'inc/options.php';
   >
     <div
       class="
-        mx-auto flex items-end
+        mx-auto md:px-4
         <?= $he_max_width ?>
       "
     >
-      <?php if ( $he_align == 'center' ) : ?>
-      <div class="md:hidden h-14 w-14"></div>
-      <?php endif; ?>
-
       <div
         class="
-          flex-1 items-end 
-          <?= $he_align == 'justify' ? 'flex pl-4 py-2' : 'text-center py-4' ?>
+          flex items-end
+          <?= ($he_show_border && !$he_is_border_full_width) ? 'border-b' : ''?>
+        "
+        style="
+          border-color: <?= $he_color_border ?>;
         "
       >
-        <?php
-        $custom_logo_id = get_theme_mod('custom_logo');
-        $logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
-
-        if ( $he_show_logo && $logo_url ) :
-        ?>
-        <div class="flex-shrink-0 flex align-baseline justify-center">
-          <a href="/" class="inline-block ">
-            <img
-              src="<?=esc_url($logo_url)?>"
-              alt="logo"
-              loading="lazy"
-            >
-          </a>
-        </div>
-        <?php endif;?>
-
-        
-        <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
-          <h1
-            class="w-full text-2xl pl-2 font-sans font-semibold"
-            style="
-              color: <?= $he_color_title ?>;
-            "
-          >
-            <a href="/" class="hover:underline">
-              <?php bloginfo( 'name' ); ?>
-            </a>
-          </h1>
-        <?php endif;?>
-      </div>
-
-      <?php if ( $he_align == 'justify' ) : ?>
-      <nav class="px-3 py-1 hidden md:block">
-        <div class="max-w-full mx-auto text-center flex justify-center">
-          <?php if ( has_nav_menu( 'primary' ) ) : ?>
-            <?php
-            wp_nav_menu(
-              array(
-                'menu_class' => 'isolasia_primary-menu',
-                'theme_location' => 'primary',
-                'fallback_cb' => false
-              )
-            );
-            ?>
-          <?php endif; ?>
-        </div>
-      </nav>
-      <?php endif; ?>
-
-      <div class="md:hidden flex-0 px-1">
-        <button
-          id="side-drawer-trigger"
-          type="button"
-          class="w-12 h-12"
+        <?php if ( $he_align == 'center' ) : ?>
+        <div class="md:hidden h-14 w-14"></div>
+        <?php endif; ?>
+  
+        <div
+          class="
+            flex-1 items-end 
+            <?= $he_align == 'justify' ? 'flex pl-4 py-2' : 'text-center py-4' ?>
+          "
         >
-          <i class="fas fa-bars fa-lg"></i>
-        </button>
+          <?php
+          $custom_logo_id = get_theme_mod('custom_logo');
+          $logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
+  
+          if ( $he_show_logo && $logo_url ) :
+          ?>
+          <div class="flex-shrink-0 flex align-baseline justify-center">
+            <a href="/" class="inline-block ">
+              <img
+                src="<?=esc_url($logo_url)?>"
+                alt="logo"
+                loading="lazy"
+              >
+            </a>
+          </div>
+          <?php endif;?>
+  
+          
+          <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
+            <h1
+              class="w-full text-2xl pl-2 font-sans font-semibold"
+              style="
+                color: <?= $he_color_title ?>;
+              "
+            >
+              <a href="/" class="hover:underline">
+                <?php bloginfo( 'name' ); ?>
+              </a>
+            </h1>
+          <?php endif;?>
+        </div>
+  
+        <?php if ( $he_align == 'justify' ) : ?>
+        <nav class="px-3 py-1 hidden md:block">
+          <div class="max-w-full mx-auto text-center flex justify-center">
+            <?php if ( has_nav_menu( 'primary' ) ) : ?>
+              <?php
+              wp_nav_menu(
+                array(
+                  'menu_class' => 'isolasia_primary-menu',
+                  'theme_location' => 'primary',
+                  'fallback_cb' => false
+                )
+              );
+              ?>
+            <?php endif; ?>
+          </div>
+        </nav>
+        <?php endif; ?>
+  
+        <div class="md:hidden flex-0 px-1">
+          <button
+            id="side-drawer-trigger"
+            type="button"
+            class="w-12 h-12"
+          >
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -117,7 +127,7 @@ include 'inc/options.php';
   <nav
     class="
       hidden md:block
-      <?= $he_show_border ? 'border-b' : ''?>
+      <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
     "
     style="
       background-color: <?= $he_color_bg ?>;
@@ -125,8 +135,22 @@ include 'inc/options.php';
       border-color: <?= $he_color_border ?>;
     "
   >
-    <div class="max-w-full mx-auto text-center flex justify-center">
+    <div
+      class="
+        mx-auto md:px-4
+        <?= $he_max_width ?>
+      "
+    >
       <?php if ( has_nav_menu( 'primary' ) ) : ?>
+      <div
+        class="
+          text-center flex justify-center
+          <?= ($he_show_border && !$he_is_border_full_width) ? 'border-b' : ''?>
+        "
+        style="
+          border-color: <?= $he_color_border ?>;
+        "
+      >
         <?php
         wp_nav_menu(
           array(
@@ -136,6 +160,7 @@ include 'inc/options.php';
           )
         );
         ?>
+      </div>
       <?php endif; ?>
     </div>
   </nav>
