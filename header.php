@@ -80,7 +80,7 @@ include 'inc/options.php';
           
           <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
             <h1
-              class="w-full text-2xl pl-2 font-sans font-semibold"
+              class="w-full text-2xl pl-2 font-display"
               style="
                 color: <?= $he_color_title ?>;
               "
@@ -93,7 +93,7 @@ include 'inc/options.php';
         </div>
   
         <?php if ( $he_align == 'justify' ) : ?>
-        <nav class="px-3 py-1 hidden md:block">
+        <nav class="px-3 py-0.5 hidden md:block">
           <div class="max-w-full mx-auto text-center flex justify-center">
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
               <?php

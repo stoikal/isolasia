@@ -6,7 +6,7 @@ function popular_posts_section($wp_customize) {
   ));
 
   $wp_customize->add_setting('pp_show_thumbnails', array(
-    'default' => false,
+    'default' => true,
     'sanitize_callback' => 'sanitize_key',
   ));
 

@@ -17,7 +17,7 @@ function header_section($wp_customize) {
   ));
 
   $wp_customize->add_setting('he_show_site_title', array(
-    'default' => true,
+    'default' => false,
     'sanitize_callback' => 'sanitize_key',
   ));
 
@@ -29,7 +29,7 @@ function header_section($wp_customize) {
   ));
 
   $wp_customize->add_setting('he_show_border', array(
-    'default' => true,
+    'default' => false,
     'sanitize_callback' => 'sanitize_key',
   ));
 

@@ -1,8 +1,6 @@
 <?php
 include 'inc/options.php';
 
-$FORCE_TAILWIND_TO_GENERATE_CLASSES = 'flex flex-wrap -mx-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-1 block no-underline h-full transition border border-white hover:border-black p-4 pb-0 aspect-[4/3] w-full object-cover p-4 mb-1';
-
 get_header();
 ?>
 

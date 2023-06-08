@@ -41,7 +41,7 @@ function footer_panel($wp_customize) {
   ));
 
   $wp_customize->add_setting('fo_text', array(
-    'default' => '',
+    'default' => 'Powered by Wordpress',
     'sanitize_callback' => 'sanitize_text_field',
   ));
 

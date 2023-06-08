@@ -6,7 +6,7 @@ function recent_posts_section($wp_customize) {
   ));
 
   $wp_customize->add_setting( 'rp_gutter_size', array(
-    'default' => 2,
+    'default' => 3,
     'sanitize_callback' => 'sanitize_text_field',
   ));
 

@@ -1,6 +1,6 @@
 /*
 Theme Name: Isolasia
-Version: 0.4.0
+Version: 0.6.0
 Author: KI-Freiwillige
 */
 
@@ -568,11 +568,6 @@ html {
   z-index: 20 !important;
 }
 
-.-mx-4 {
-  margin-left: -1rem !important;
-  margin-right: -1rem !important;
-}
-
 .mx-0 {
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -637,10 +632,6 @@ html {
 
 .mr-1 {
   margin-right: 0.25rem !important;
-}
-
-.block {
-  display: block !important;
 }
 
 .inline-block {
@@ -774,11 +765,6 @@ html {
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
-.border-white {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity)) !important;
-}
-
 .bg-\[rgba\(0\2c 0\2c 0\2c 0\.5\)\] {
   background-color: rgba(0,0,0,0.5) !important;
 }
@@ -879,9 +865,14 @@ html {
   padding-right: 1rem !important;
 }
 
-.py-1 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+.py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.125rem !important;
 }
 
 .py-2 {
@@ -907,10 +898,6 @@ html {
 .py-8 {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
-}
-
-.pb-0 {
-  padding-bottom: 0px !important;
 }
 
 .pl-2 {
@@ -959,10 +946,6 @@ html {
 
 .font-display {
   font-family: Arvo, Source Serif Pro !important;
-}
-
-.font-sans {
-  font-family: Montserrat, ui-sans-serif, system-ui, sans-serif !important;
 }
 
 .font-serif {
@@ -1018,10 +1001,6 @@ html {
   font-weight: 700 !important;
 }
 
-.font-semibold {
-  font-weight: 600 !important;
-}
-
 .uppercase {
   text-transform: uppercase !important;
 }
@@ -1044,10 +1023,6 @@ html {
 .text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.no-underline {
-  text-decoration-line: none !important;
 }
 
 .transition {
@@ -1364,11 +1339,6 @@ html {
 
 .hover\:border-b:hover {
   border-bottom-width: 1px !important;
-}
-
-.hover\:border-black:hover {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
 .hover\:underline:hover {
