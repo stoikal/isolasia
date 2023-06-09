@@ -19,7 +19,7 @@ if ( count($latest_posts) > 0 ):
     <div
       class="
         mx-auto overflow-hidden
-        mb-8
+        mb-10
         <?= $rp_max_witdh ?>
         <?= $rp_show_frame_border ? 'border' : '' ?>
       "

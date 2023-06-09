@@ -4,6 +4,9 @@ include __DIR__ . '/../../inc/options.php';
 $margin_x_arr = array('mx-0', 'mx-1', 'mx-2', 'mx-3', 'mx-4');
 $title_margin_x = $margin_x_arr[$rp_gutter];
 
+$margin_arr = array('-mx-2', '-mx-1', 'mx-0', 'mx-1', 'mx-2');
+$posts_container_margin = $margin_arr[$rp_gutter];
+
 if ( empty($cc_category_id) ) return;
 
 $category_name = get_cat_name($cc_category_id);
@@ -21,7 +24,7 @@ if ( count($posts) > 0 ):
 
 <section
   class="
-    overflow-hidden p-4
+    overflow-hidden p-4 mb-10
     <?= $pp_show_border ? 'border' : '' ?>
   "
 >
@@ -36,7 +39,12 @@ if ( count($posts) > 0 ):
       <?= $category_name ?>
     </span>
   </div>
-  <div class="flex flex-wrap">
+  <div
+    class="
+      flex flex-wrap
+      <?= $posts_container_margin ?>
+    "
+  >
     <?php
     foreach ($posts as $post):
       $post_id = $post->ID;
@@ -53,7 +61,7 @@ if ( count($posts) > 0 ):
     <div
       class="
         flex p-2 mb-3 w-full
-        <?= $si_show_sidebar_home ? '' : 'md:w-1/2 lg:w-1/3' ?>
+        <?= $si_show_sidebar_home ? 'lg:w-1/2' : 'md:w-1/2 lg:w-1/3' ?>
       "
     >
       <?php if ( $pp_show_thumbnails) :?>

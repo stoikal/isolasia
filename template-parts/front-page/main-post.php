@@ -11,7 +11,7 @@ if ( $ho_show_page && have_posts() ) :
 ?>
   <article
     class="
-      p-4 mb-8
+      p-4 mb-10
       <?= $ho_show_border ? 'border' : '' ?>
     "
   >
