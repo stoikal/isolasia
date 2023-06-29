@@ -73,8 +73,13 @@ require 'inc/customize_register/footer_panel.php';
 #endregion CUSTOMIZER SETTINGS
 
 function exclude_category_from_loop( $query ) {
-  if ( $query->is_main_query() && ! is_admin() ) {
-      $excluded_category = get_theme_mod( 'cc_category_id', '' );
+  $excluded_category = get_theme_mod( 'cc_category_id', '' );
+  $is_need_exclude = (
+    $query->is_main_query() &&
+    ($query->is_author || !$query->is_archive())
+  );
+
+  if ( !is_admin() && $is_need_exclude  ) {
 
       $query->set( 'category__not_in', array( $excluded_category  ) );
   }
