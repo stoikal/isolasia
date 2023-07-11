@@ -93,28 +93,30 @@ include 'inc/options.php';
         </div>
   
         <?php if ( $he_align == 'justify' ) : ?>
-        <nav class="px-3 py-0.5 hidden md:block">
-          <div class="max-w-full mx-auto text-center flex justify-center">
-            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-              <?php
-              wp_nav_menu(
-                array(
-                  'menu_class' => 'isolasia_primary-menu',
-                  'theme_location' => 'primary',
-                  'fallback_cb' => false
-                )
-              );
-              ?>
-            <?php endif; ?>
-          </div>
-        </nav>
+          <?php get_template_part('template-parts/header/search-form') ?>
+
+          <nav class="pr-3 py-0.5 hidden md:block">
+            <div class="max-w-full mx-auto text-center flex justify-center">
+              <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                <?php
+                  wp_nav_menu(
+                    array(
+                      'menu_class' => 'isolasia_primary-menu',
+                      'theme_location' => 'primary',
+                      'fallback_cb' => false
+                    )
+                  );
+                ?>
+              <?php endif; ?>
+            </div>
+          </nav>
         <?php endif; ?>
   
         <div class="md:hidden flex-0 px-1">
           <button
             id="side-drawer-trigger"
             type="button"
-            class="w-12 h-12"
+            class="w-11 h-11"
           >
             <i class="fas fa-bars fa-lg"></i>
           </button>
@@ -165,36 +167,6 @@ include 'inc/options.php';
     </div>
   </nav>
   <?php endif; ?>
-
-  <!-- <div
-    class="
-    border-black
-      <?= $he_show_border ? 'border-b' : ''?>
-    "
-  >
-    <form
-      id="isolasia_search-form"
-      class="
-        mx-auto px-4 text-right flex
-        <?= $he_max_width ?>
-      "
-      action="/"
-      method="GET"
-    >
-      <input
-        name="s"
-        type="text"
-        placeholder="Pencarian..."
-        class="focus:outline-none text-right px-2 flex-1"
-      >
-      <button
-        type="submit"
-        class="p-1"
-      >
-        <i class="fas fa-search"></i>
-      </button>
-    </form>
-  </div> -->
 
   <div
     id="side-drawer-overlay"       
