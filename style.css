@@ -600,6 +600,10 @@ html {
   z-index: 20 !important;
 }
 
+.z-50 {
+  z-index: 50 !important;
+}
+
 .-mx-1 {
   margin-left: -0.25rem !important;
   margin-right: -0.25rem !important;
