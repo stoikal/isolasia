@@ -40,6 +40,7 @@ get_header();
         </header>
         
         <main class="mb-4">
+          <? if ( has_post_thumbnail() ) : ?>
           <div
             class="
               mb-4 mx-auto
@@ -52,6 +53,7 @@ get_header();
               class="w-full max-h-[32rem] object-cover"
             >
           </div>
+          <? endif ?>
     
           <div
             class="
