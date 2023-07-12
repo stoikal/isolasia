@@ -13,11 +13,12 @@ jQuery('#side-drawer-overlay')
   })
 
 
-// SEACH FORM
+// SEARCH FORM
 
 jQuery('.search-form-trigger')
   .click(() => {
     jQuery('.search-form-overlay').removeClass('hidden')
+    jQuery('#search-input')?.focus()
   })
 
 jQuery('.search-form-close-btn')
@@ -111,5 +112,4 @@ class DarkMode {
 }
 
 const darkMode = new DarkMode('isolasia_dark-mode-toggle-input')
-
 darkMode.init()

@@ -26,6 +26,7 @@
         method="GET"
       >
         <input
+          id="search-input"
           name="s"
           type="text"
           placeholder="Cari artikel..."
