@@ -1076,11 +1076,6 @@ html {
   text-transform: uppercase !important;
 }
 
-.text-black {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
 .text-gray-600 {
   --tw-text-opacity: 1 !important;
   color: rgb(75 85 99 / var(--tw-text-opacity)) !important;
@@ -1426,7 +1421,7 @@ html {
   right: 0;
   bottom: 0;
   background-color: var(--toggle-bg-color);
-  transition: .4s;
+  transition: .1s ease-in;
   border-radius: 28px;
 }
 
@@ -1438,7 +1433,7 @@ html {
   left: 2px;
   bottom: 2px;
   background-color: var(--toggle-slider-color);
-  transition: .2s;
+  transition: .1s ease-in;
   border-radius: 50%;
 }
 
@@ -1488,9 +1483,19 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
+:is(.dark .dark\:border-stone-400) {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(168 162 158 / var(--tw-border-opacity)) !important;
+}
+
 :is(.dark .dark\:bg-stone-900) {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(28 25 23 / var(--tw-bg-opacity)) !important;
+}
+
+:is(.dark .dark\:text-stone-400) {
+  --tw-text-opacity: 1 !important;
+  color: rgb(168 162 158 / var(--tw-text-opacity)) !important;
 }
 
 :is(.dark .dark\:text-white) {

@@ -253,8 +253,7 @@ Author: KI-Freiwillige
     right: 0;
     bottom: 0;
     background-color: var(--toggle-bg-color);
-    -webkit-transition: .4s;
-    transition: .4s;
+    transition: .1s ease-in;
     border-radius: 28px;
   }
   
@@ -266,7 +265,7 @@ Author: KI-Freiwillige
     left: 2px;
     bottom: 2px;
     background-color: var(--toggle-slider-color);
-    transition: .2s;
+    transition: .1s ease-in;
     border-radius: 50%;
   }
 

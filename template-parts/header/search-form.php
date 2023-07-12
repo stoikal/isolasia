@@ -7,7 +7,7 @@
   </button>
 
   <div
-    class="search-form-overlay z-50 hidden bg-[rgba(0,0,0,0.9)] fixed right-0 top-0 bottom-0 left-0 text-black"
+    class="search-form-overlay z-50 hidden bg-[rgba(0,0,0,0.9)] fixed right-0 top-0 bottom-0 left-0"
   >
     <button
       type="button"

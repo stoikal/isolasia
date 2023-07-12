@@ -30,10 +30,11 @@ if ( count($posts) > 0 ):
   <div
     class="
       mb-4 border-b border-black
+      <?= $da_color_border ?>
       <?= $title_margin_x ?>
     "
   >
-    <span class="font-display text-xl text-black">
+    <span class="font-display text-xl">
       TERPOPULER
     </span>
   </div>
@@ -92,7 +93,7 @@ if ( count($posts) > 0 ):
   
         <?php if ( $pp_show_authors) :?>
         <p class="text-xs mb-1">
-          <span class="text-gray-600">
+          <span class="text-gray-600 <?= $da_color_text_muted ?>">
             <?= esc_html( $post_date ) ?>
           </span>
           <span>

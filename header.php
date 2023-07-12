@@ -89,7 +89,7 @@ include 'inc/options.php';
           
           <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
             <h1
-              class="w-full text-2xl pl-2 font-display"
+              class="w-full text-2xl pl-2 font-display <?= $da_color_text ?>"
               style="
                 color: <?= $he_color_title ?>;
               "
@@ -139,6 +139,8 @@ include 'inc/options.php';
   <nav
     class="
       hidden md:block
+      <?= $da_color_bg ?>
+      <?= $da_color_text ?>
       <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
     "
     style="

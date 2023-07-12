@@ -13,6 +13,8 @@ $co_footer_border = get_theme_mod('co_footer_border', '#528f67');
 // DARK MODE
 $da_color_bg = 'dark:bg-stone-900';
 $da_color_text = 'dark:text-white';
+$da_color_text_muted = 'dark:text-stone-400';
+$da_color_border = 'dark:border-stone-400';
 
 // HEADER
 $he_show_logo = get_theme_mod( 'he_show_logo', true );

@@ -60,7 +60,7 @@ include __DIR__ . '/../../inc/options.php';
         <span>
           &bull;
         </span>
-        <span class="text-gray-700">
+        <span class="text-gray-700 <?= $da_color_text_muted ?>">
           <a
             href="<?= esc_url( $month_link )?>"
             class="hover:underline"

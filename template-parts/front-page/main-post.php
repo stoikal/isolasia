@@ -18,6 +18,7 @@ if ( $ho_show_page && have_posts() ) :
     <div
       class="
         mb-4 border-b border-black
+        <?= $da_color_border ?>
         <?= $margin_x ?>
       "
     >
