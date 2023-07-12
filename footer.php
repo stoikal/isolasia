@@ -6,6 +6,8 @@ include 'inc/options.php';
     class="
       text-center p-6
       border-t
+      <?= $da_color_bg ?>
+      <?= $da_color_border ?>
     "
     style="
       background-color: <?= $fo_color_bg ?>;
