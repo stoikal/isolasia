@@ -59,33 +59,9 @@ include 'inc/options.php';
       </div>
       <?php endif; ?>
     </div>
-    <div class="mb-1">
-      <?php
-      $socials = array(
-        'fa-facebook' => get_theme_mod('facebook_link'),
-        'fa-instagram' => get_theme_mod('instagram_link'),
-        'fa-twitter' => get_theme_mod('twitter_link'),
-        'fa-youtube' => get_theme_mod('youtube_link'),
-        'fa-tiktok' => get_theme_mod('tiktok_link')
-      );
 
-      foreach ( $socials as $icon => $link ) :
-        if ( $link ) :
-      ?>
-        <a
-          href="<?= esc_url($link) ?>"
-          class="inline-block p-1 mx-1 mb-px hover:mb-0 hover:border-b"
-          style="
-            border-color: <?= $fo_color_text ?>
-          "
-        >
-          <i class="fab fa-lg <?= esc_html($icon) ?>" ></i>
-        </a>
-      <?php
-        endif;
-      endforeach;
-      ?>
-    </div>
+    <?php get_template_part( 'template-parts/footer/social-links' );?>
+
     <small class="mb-6">
       <?= esc_html( $fo_text ) ?>
     </small>

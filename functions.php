@@ -26,7 +26,8 @@ function isolasia_menus() {
     array(
       'primary' => 'Header Menu',
       'footer_1' => 'Footer Menu (left)',
-      'footer_2' => 'Footer Menu (right)'
+      'footer_2' => 'Footer Menu (right)',
+      'footer_socials' => 'Social Links'
     )
   );
 }
@@ -69,7 +70,7 @@ require 'inc/customize_register/header_section.php';
 require 'inc/customize_register/single_post_section.php';
 require 'inc/customize_register/front_page_panel.php';
 require 'inc/customize_register/sidebar_section.php';
-require 'inc/customize_register/footer_panel.php';
+require 'inc/customize_register/footer_section.php';
 #endregion CUSTOMIZER SETTINGS
 
 function exclude_category_from_loop( $query ) {
