@@ -5,7 +5,9 @@ include 'inc/options.php';
 get_header();
 ?>
 
-<div class="max-w-screen-xl mx-auto flex flex-wrap py-8 mb-20">
+<div
+  class="max-w-screen-xl mx-auto flex flex-wrap py-8 mb-20"
+>
   <div
     class="
       w-full

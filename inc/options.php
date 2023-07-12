@@ -10,6 +10,10 @@ $co_footer_bg = get_theme_mod('co_footer_bg', '#528f67');
 $co_footer_text = get_theme_mod('co_footer_text', '#ffea64');
 $co_footer_border = get_theme_mod('co_footer_border', '#528f67');
 
+// DARK MODE
+$da_color_bg = 'dark:bg-stone-900';
+$da_color_text = 'dark:text-white';
+
 // HEADER
 $he_show_logo = get_theme_mod( 'he_show_logo', true );
 $he_show_site_title = get_theme_mod( 'he_show_site_title', false );

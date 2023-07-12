@@ -3,7 +3,10 @@ include 'inc/options.php';
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html
+  <?php language_attributes(); ?>
+  class="dark"
+>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,6 +17,10 @@ include 'inc/options.php';
   <?php wp_head(); ?>
 </head>
 <body
+  class="
+    <?= $da_color_bg ?>
+    <?= $da_color_text ?>
+  "
   style="background-color: <?= $co_body_bg ?> "
 >
 	<a
@@ -27,6 +34,8 @@ include 'inc/options.php';
 	<header
     class="
       relative
+      <?= $da_color_bg ?>
+      <?= $da_color_text ?>
       <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
     "
     style="
@@ -56,7 +65,7 @@ include 'inc/options.php';
   
         <div
           class="
-            flex-1 items-end 
+            flex-1 items-end
             <?= $he_align == 'justify' ? 'flex pl-4 py-2' : 'text-center py-4' ?>
           "
         >
@@ -93,6 +102,7 @@ include 'inc/options.php';
         </div>
   
         <?php if ( $he_align == 'justify' ) : ?>
+          <?php get_template_part('template-parts/header/dark-mode-toggle') ?>
           <?php get_template_part('template-parts/header/search-form') ?>
 
           <nav class="pr-3 py-0.5 hidden md:block">

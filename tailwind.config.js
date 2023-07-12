@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./**/*.php"],
   important: true,
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
