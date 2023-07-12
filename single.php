@@ -13,10 +13,11 @@ get_header();
         <?php
           while (have_posts()):
             the_post();
+            $post_id = get_the_ID();
             $title = get_the_title();
             $post_date = get_the_date();
             $author_name = get_the_author();
-            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full');
         ?>
         
         <header class="p-6 <?= $sp_max_width ?> mx-auto">
@@ -74,6 +75,30 @@ get_header();
             ?>
           </div>
         </main>
+
+        <div class="mb-4 max-w-screen-md mx-auto px-6">
+          <?php
+            $tags =  get_the_tags(get_the_ID());
+
+            if ($tags) :
+          ?>
+            <span>Tags:</span>
+            <?php
+              foreach ($tags as $index=>$tag) :
+                $tag_link = get_tag_link($tag->term_id);
+                $tag_name = $tag->name;
+            ?>
+              <a
+                href="<?= esc_url($tag_link) ?>"
+                class="hover:underline"
+              ><?= esc_html($tag_name) ?></a><?php if ($index < sizeof($tags) - 1) echo ','?>
+            <?php
+              endforeach;
+            ?>
+          <?php
+            endif;
+          ?>
+        </div>
         <?php endwhile?>
       <?php endif ?>
 
