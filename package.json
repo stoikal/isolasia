@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "tailwind": "tailwindcss -i ./tailwind.css -o ./style.css --postcss --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "GNU General Public License v2 or later",
+  "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   }
