@@ -42,7 +42,7 @@ include __DIR__ . '/../../inc/options.php';
                     </button>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center pt-2">
                     <?php
                     $custom_logo_id = get_theme_mod('custom_logo');
                     $logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
@@ -62,7 +62,7 @@ include __DIR__ . '/../../inc/options.php';
 
                     <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
                         <p
-                            class="w-full text-2xl pl-2 font-display mb-1.5 <?= $da_color_text ?>"
+                            class="w-full text-2xl md:text-3xl pl-2 font-display mb-1.5 <?= $da_color_text ?>"
                             style="
                                 color: <?= $he_color_title ?>;
                             "

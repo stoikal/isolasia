@@ -52,7 +52,7 @@ function header_section($wp_customize) {
     'type' => 'select',
     'choices' => array(
       'full' => 'Full',
-      'center' => 'Center',
+      'center' => 'Centered',
     ),
   ));
 
