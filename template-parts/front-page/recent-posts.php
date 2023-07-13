@@ -59,6 +59,7 @@ if ( count($latest_posts) > 0 ):
                 class="
                   aspect-[4/3] group overflow-hidden relative
                   <?= $rp_is_rounded ? 'rounded' : '' ?>
+                  <?= $co_nopic_bg ?> <?= $da_color_nopic_bg ?>
                 "
               >
                 <a
@@ -205,6 +206,7 @@ if ( count($latest_posts) > 0 ):
                   relative
                   <?= $rp_is_details_outside ? 'md:aspect-[4/3]' : 'h-full md:aspect-auto' ?>
                   <?= $rp_is_rounded ? 'rounded' : '' ?>
+                  <?= $co_nopic_bg ?> <?= $da_color_nopic_bg ?>
                 "
               >
                 <a

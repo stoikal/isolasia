@@ -65,6 +65,7 @@ if ( count($posts) > 0 ):
     >
       <?php if ( $pp_show_thumbnails) :?>
       <div class="w-1/3 group overflow-hidden">
+        <?php if ($thumbnail_url) :?>
         <a href="<?= esc_url($post_link)?>" tabindex="-1">
           <img
             src=<?= esc_url($thumbnail_url) ?>
@@ -72,6 +73,9 @@ if ( count($posts) > 0 ):
             loading="lazy"
           >
         </a>
+        <?php else :?>
+          <div class="aspect-[4/3] <?= $co_nopic_bg ?> <?= $da_color_nopic_bg ?>"></div>
+        <?php endif; ?>
       </div>
       <?php endif; ?>
   

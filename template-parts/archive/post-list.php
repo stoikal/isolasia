@@ -26,6 +26,7 @@ include __DIR__ . '/../../inc/options.php';
         <?= $si_show_sidebar_page ? 'sm:w-1/2' : 'sm:w-1/2 md:w-1/3 lg:w-1/4' ?>
       "
     >
+      <?php if (has_post_thumbnail()) : ?>
       <div class="mb-4">
         <a
           href="<?= esc_url( $post_permalink ); ?>"
@@ -37,6 +38,8 @@ include __DIR__ . '/../../inc/options.php';
           >
         </a>
       </div>
+      <?php endif; ?>
+
       <h1 class="text-lg font-display mb-4">
         <a
           href="<?= esc_url( $post_permalink ); ?>"
