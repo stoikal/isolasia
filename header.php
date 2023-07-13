@@ -31,155 +31,18 @@ include 'inc/options.php';
     skip to content
   </a>
 
-	<header
-    class="
-      relative
-      <?= $da_color_bg ?>
-      <?= $da_color_text ?>
-      <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
-    "
-    style="
-      background-color: <?= $he_color_bg ?>;
-      color: <?= $he_color_text ?>;
-      border-color: <?= $he_color_border ?>;
-    "
-  >
-    <div
-      class="
-        mx-auto md:px-4
-        <?= $he_max_width ?>
-      "
-    >
-      <div
-        class="
-          flex items-end
-          <?= ($he_show_border && !$he_is_border_full_width) ? 'border-b' : ''?>
-        "
-        style="
-          border-color: <?= $he_color_border ?>;
-        "
-      >
-        <?php if ( $he_align == 'center' ) : ?>
-        <div class="md:hidden h-14 w-14"></div>
-        <?php endif; ?>
-  
-        <div
-          class="
-            flex-1 items-end
-            <?= $he_align == 'justify' ? 'flex pl-4 py-2' : 'text-center py-4' ?>
-          "
-        >
-          <?php
-          $custom_logo_id = get_theme_mod('custom_logo');
-          $logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
-  
-          if ( $he_show_logo && $logo_url ) :
-          ?>
-          <div class="flex-shrink-0 flex align-baseline justify-center">
-            <a href="/" class="inline-block ">
-              <img
-                src="<?=esc_url($logo_url)?>"
-                alt="logo"
-                loading="lazy"
-              >
-            </a>
-          </div>
-          <?php endif;?>
-  
-          
-          <?php if ( $he_show_site_title && get_bloginfo( 'name' ) ) : ?>
-            <h1
-              class="w-full text-2xl pl-2 font-display <?= $da_color_text ?>"
-              style="
-                color: <?= $he_color_title ?>;
-              "
-            >
-              <a href="/" class="hover:underline">
-                <?php bloginfo( 'name' ); ?>
-              </a>
-            </h1>
-          <?php endif;?>
-        </div>
-  
-        <?php if ( $he_align == 'justify' ) : ?>
-          <?php get_template_part('template-parts/header/dark-mode-toggle') ?>
-          <?php get_template_part('template-parts/header/search-form') ?>
+  <?php
+  switch ($he_align) {
+    case 'justify':
+      get_template_part( 'template-parts/header/header-layout-justify' );
+      break;
+    case 'center':
+      get_template_part( 'template-parts/header/header-layout-center' );
+      break;
+  }
+  ?>
 
-          <nav class="pr-3 py-0.5 hidden md:block">
-            <div class="max-w-full mx-auto text-center flex justify-center">
-              <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                <?php
-                  wp_nav_menu(
-                    array(
-                      'menu_class' => 'isolasia_primary-menu',
-                      'theme_location' => 'primary',
-                      'fallback_cb' => false
-                    )
-                  );
-                ?>
-              <?php endif; ?>
-            </div>
-          </nav>
-        <?php endif; ?>
-  
-        <div class="md:hidden flex-0 px-1">
-          <button
-            id="side-drawer-trigger"
-            type="button"
-            class="w-11 h-11"
-          >
-            <i class="fas fa-bars fa-lg"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <?php if ( $he_align == 'center' ) : ?>
-  <nav
-    class="
-      hidden md:block
-      <?= $da_color_bg ?>
-      <?= $da_color_text ?>
-      <?= ($he_show_border && $he_is_border_full_width) ? 'border-b' : ''?>
-    "
-    style="
-      background-color: <?= $he_color_bg ?>;
-      color: <?= $he_color_text ?>;
-      border-color: <?= $he_color_border ?>;
-    "
-  >
-    <div
-      class="
-        mx-auto md:px-4
-        <?= $he_max_width ?>
-      "
-    >
-      <?php if ( has_nav_menu( 'primary' ) ) : ?>
-      <div
-        class="
-          text-center flex justify-center
-          <?= ($he_show_border && !$he_is_border_full_width) ? 'border-b' : ''?>
-        "
-        style="
-          border-color: <?= $he_color_border ?>;
-        "
-      >
-        <?php
-        wp_nav_menu(
-          array(
-            'theme_location' => 'primary',
-            'menu_class' => 'isolasia_primary-menu',
-            'fallback_cb' => false
-          )
-        );
-        ?>
-      </div>
-      <?php endif; ?>
-    </div>
-  </nav>
-  <?php endif; ?>
-
+  <!-- #region Side Drawer -->
   <div
     id="side-drawer-overlay"       
     role="button"
@@ -189,7 +52,11 @@ include 'inc/options.php';
 
   <div
     id="side-drawer"
-    class="md:hidden transition duration-200 fixed overflow-hidden top-0 left-0 h-full bg-white z-20 -translate-x-full p-4"
+    class="
+      md:hidden transition duration-200 fixed overflow-hidden top-0 left-0 h-full bg-white z-20 -translate-x-full p-4
+      <?= $da_color_bg ?>
+      <?= $da_color_text ?>
+    "
   >
     <nav class="py-6 pr-14">
       <?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -205,3 +72,4 @@ include 'inc/options.php';
       <?php endif; ?>
     </nav>
   </div>
+  <!-- #endregion -->
