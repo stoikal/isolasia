@@ -235,7 +235,7 @@ Author: KI-Freiwillige
 .isolasia_toggle-label {
   position: relative;
   display: inline-block;
-  width: 44px;
+  width: 40px;
   height: 20px;
   padding: 6px;
 
@@ -254,7 +254,7 @@ Author: KI-Freiwillige
     bottom: 0;
     background-color: var(--toggle-bg-color);
     transition: .1s ease-in;
-    border-radius: 28px;
+    border-radius: 20px;
   }
   
   & > span:before {
@@ -270,14 +270,10 @@ Author: KI-Freiwillige
   }
 
   & > input:checked + span {
-    background-color: black;
-  }
-  
-  & > input:focus + span {
-    box-shadow: 0 0 1px #ccc;
+    background-color: #44403c;
   }
   
   & > input:checked + span:before {
-    transform: translateX(24px);
+    transform: translateX(20px);
   }
 }

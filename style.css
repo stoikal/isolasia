@@ -1436,7 +1436,7 @@ html {
 .isolasia_toggle-label {
   position: relative;
   display: inline-block;
-  width: 44px;
+  width: 40px;
   height: 20px;
   padding: 6px;
 }
@@ -1456,7 +1456,7 @@ html {
   bottom: 0;
   background-color: var(--toggle-bg-color);
   transition: .1s ease-in;
-  border-radius: 28px;
+  border-radius: 20px;
 }
 
 .isolasia_toggle-label > span:before {
@@ -1472,15 +1472,11 @@ html {
 }
 
 .isolasia_toggle-label > input:checked + span {
-  background-color: black;
-}
-
-.isolasia_toggle-label > input:focus + span {
-  box-shadow: 0 0 1px #ccc;
+  background-color: #44403c;
 }
 
 .isolasia_toggle-label > input:checked + span:before {
-  transform: translateX(24px);
+  transform: translateX(20px);
 }
 
 .hover\:mb-0:hover {
