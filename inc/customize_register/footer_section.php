@@ -18,13 +18,13 @@ function footer_section($wp_customize) {
   ));
 
   $color_settings = array(
-    'co_footer_bg' => ['Footer Background', '#528f67'],
-    'co_footer_text' => ['Footer Text', '#ffea64'],
-    'co_footer_border' => ['Footer Border', '#528f67'],
+    'co_footer_bg' => ['Background Color', '#528f67'],
+    'co_footer_text' => ['Text Color', '#ffea64'],
+    'co_footer_border' => ['Border Color', '#528f67'],
   );
 
   foreach ($color_settings as $setting_name => $options) {
-    $control_name = $setting_name . '_control';
+    $control_name = 'footer_' . $setting_name . '_control';
     $label = $options[0];
     $default = $options[1];
 
