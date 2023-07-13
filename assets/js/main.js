@@ -1,7 +1,5 @@
 // SIDE NAVIGATION DRAWER
 
-console.log('===~jQuery(".side-drawer-trigger")~===', jQuery(".side-drawer-trigger"))
-
 jQuery('.side-drawer-trigger')
   .click(() => {
     jQuery('#side-drawer-overlay').removeClass('invisible')
@@ -17,15 +15,27 @@ jQuery('#side-drawer-overlay')
 
 // SEARCH FORM
 
+function closeSearchForm () {
+  jQuery('.search-form-overlay').addClass('hidden')
+}
+
+function handleKeyDown (e) {
+  if (e.key === "Escape") {
+    closeSearchForm()
+  }
+}
+
 jQuery('.search-form-trigger')
   .click(() => {
     jQuery('.search-form-overlay').removeClass('hidden')
-    jQuery('#search-input')?.focus()
+    jQuery('#search-input')?.select()
+    jQuery(document).keydown(handleKeyDown);
   })
 
 jQuery('.search-form-close-btn')
   .click(() => {
-    jQuery('.search-form-overlay').addClass('hidden')
+    closeSearchForm()
+    jQuery(document).unbind('keydown', handleKeyDown);
   })
 
 
@@ -34,12 +44,11 @@ jQuery('.search-form-close-btn')
 class ThemeStorage {
   constructor (options = {}) {
     const {
-      key = 'theme',
-      onChange = () => {}
+      key = 'theme'
     } = options
 
     this.key = key
-    this.onChange = onChange
+    this.callbacks = []
   }
 
   get value () {
@@ -51,7 +60,9 @@ class ThemeStorage {
     const theme = JSON.stringify(newValue)
     localStorage.setItem(this.key, theme)
 
-    this.onChange(newValue)
+    this.callbacks.forEach((cb) => {
+      cb(newValue)
+    })
   }
 
   merge (props) {
@@ -60,12 +71,17 @@ class ThemeStorage {
       ...props
     }
   }
+  
+  onChange (cb) {
+    this.callbacks.push(cb)
+  }
 }
 
 class DarkMode {
-  constructor (toggleElClass) {
+  constructor (toggleElClass, themeStorage) {
     this.toggles = document.querySelectorAll('.' + toggleElClass)
     this.html = document.querySelector('html')
+    this.themeStorage = themeStorage
   }
 
   setDark () {
@@ -84,8 +100,7 @@ class DarkMode {
 
  
   init () {
-    this.theme = new ThemeStorage({
-      onChange: (value) => {
+    this.themeStorage.onChange((value) => {
         const { isDark } = value
 
         if (isDark) {
@@ -94,16 +109,16 @@ class DarkMode {
           this.setLight()
         }
       }
-    })
+    )
 
     this.toggles.forEach(element => {
       element.addEventListener('click', (e) => {
         const isChecked = e.target.checked
-        this.theme.merge({ isDark: isChecked })
+        this.themeStorage.merge({ isDark: isChecked })
       })
     })
 
-    const { isDark } = this.theme.value
+    const { isDark } = this.themeStorage.value
 
     if (isDark) {
       this.setDark()
@@ -113,5 +128,7 @@ class DarkMode {
   }
 }
 
-const darkMode = new DarkMode('isolasia_dark-mode-toggle-input')
+const themeStorage = new ThemeStorage({ key: 'theme' })
+const darkMode = new DarkMode('isolasia_dark-mode-toggle-input', themeStorage)
+
 darkMode.init()
